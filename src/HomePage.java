@@ -1,17 +1,24 @@
-
+import java.io.IOException;
+import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
-import javafx.scene.input.MouseEvent;
+import javafx.scene.control.Button;
 
 public class HomePage {
 
     @FXML
-    void goToLoginPage(MouseEvent event) {
-        System.out.println("banana");
+    private Button loginBtn;
+    @FXML
+    private Button reqActBtn;
+
+    @FXML
+    void goToLoginPage(ActionEvent event) {
+
     }
 
     @FXML
-    void goToRequestPage(MouseEvent event) {
-        System.out.println("banana");
+    void goToRequestPage(ActionEvent event) throws IOException {
+        App m = new App();
+        m.changeScene("RequestAccountPage.fxml");
     }
 
 }

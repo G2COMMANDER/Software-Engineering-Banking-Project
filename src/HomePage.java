@@ -9,12 +9,12 @@ public class HomePage {
 
     @FXML
     void goToRequestPage(ActionEvent event) throws IOException {
-        m.changeScene("RequestAccountPage.fxml");
+        m.changeScene("fxml_pages/RequestAccountPage.fxml");
     }
 
     @FXML
     void goToUserAccountPage(ActionEvent event) throws IOException {
-        m.changeScene("UserAccountPage.fxml");
+        m.changeScene("fxml_pages/UserAccountPage.fxml");
     }
 
 }

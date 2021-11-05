@@ -24,7 +24,7 @@ public class UserAccountPage {
 
     @FXML
     void logOut(ActionEvent event) throws IOException {
-        m.changeScene("HomePage.fxml");
+        m.changeScene("fxml_pages/HomePage.fxml");
     }
 
 }

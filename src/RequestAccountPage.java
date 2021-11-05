@@ -20,7 +20,7 @@ public class RequestAccountPage {
     
     @FXML
     void sendAndReturn(ActionEvent event) throws IOException {
-        m.changeScene("HomePage.fxml");
+        m.changeScene("fxml_pages/HomePage.fxml");
     }
 
 }

@@ -19,9 +19,10 @@ public class RequestAccountPage {
     @FXML
     private TextField uName;
 
+    App m = new App();
+    
     @FXML
     void sendAndReturn(ActionEvent event) throws IOException {
-        App m = new App();
         m.changeScene("HomePage.fxml");
     }
 

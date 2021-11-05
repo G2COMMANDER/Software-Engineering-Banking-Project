@@ -11,15 +11,15 @@ public class HomePage {
     @FXML
     private Button reqActBtn;
 
+    App m = new App();
+
     @FXML
     void goToRequestPage(ActionEvent event) throws IOException {
-        App m = new App();
         m.changeScene("RequestAccountPage.fxml");
     }
 
     @FXML
     void goToUserAccountPage(ActionEvent event) throws IOException {
-        App m = new App();
         m.changeScene("UserAccountPage.fxml");
     }
 

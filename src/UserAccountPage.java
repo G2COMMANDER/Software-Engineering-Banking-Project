@@ -5,7 +5,7 @@ import javafx.fxml.FXML;
 import javafx.scene.control.Button;
 
 public class UserAccountPage {
-    
+
     @FXML
     private Button depositMoneyBtn;
     @FXML
@@ -14,6 +14,8 @@ public class UserAccountPage {
     private Button transferMoneyBtn;
     @FXML
     private Button withdrawMoneyBtn;
+
+    App m = new App();
 
     @FXML
     void goToDepositPage(ActionEvent event) {
@@ -32,7 +34,6 @@ public class UserAccountPage {
 
     @FXML
     void logOut(ActionEvent event) throws IOException {
-        App m = new App();
         m.changeScene("HomePage.fxml");
     }
 

@@ -6,24 +6,25 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="900.0" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="HomePage">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="900.0" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="UserAccountPage">
    <children>
       <Label alignment="CENTER" layoutX="436.0" layoutY="81.0" prefWidth="900.0" text="Welcome &quot;insert name here&quot;" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0">
          <font>
             <Font size="24.0" />
          </font>
       </Label>
-      <Label alignment="CENTER" layoutX="288.0" layoutY="116.0" text="&quot;insert account balance number here" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0">
+      <Label alignment="CENTER" layoutX="288.0" layoutY="116.0" text="&quot;insert account balance amount here&quot;" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="180.0">
          <font>
             <Font size="20.0" />
          </font>
       </Label>
-      <ButtonBar layoutX="277.0" layoutY="214.0" prefHeight="173.0" prefWidth="347.0">
+      <ButtonBar layoutX="274.0" layoutY="240.0" nodeOrientation="RIGHT_TO_LEFT" prefHeight="118.0" prefWidth="370.0">
         <buttons>
-          <Button id="openAccount" fx:id="reqActBtn" alignment="CENTER" contentDisplay="CENTER" mnemonicParsing="false" onAction="#goToRequestPage" prefHeight="70.0" prefWidth="100.0" text="Withdraw Money" textAlignment="CENTER" wrapText="true" />
-            <Button fx:id="loginBtn" alignment="CENTER" contentDisplay="CENTER" mnemonicParsing="false" onAction="#goToLoginPage" prefHeight="70.0" prefWidth="100.0" text="Deposit Money" />
-            <Button alignment="CENTER" mnemonicParsing="false" prefHeight="70.0" prefWidth="100.0" text="Transfer Money" />
+            <Button fx:id="transferMoneyBtn" alignment="CENTER" mnemonicParsing="false" onAction="#goToTransferPage" prefHeight="70.0" prefWidth="110.0" text="Transfer Money" textAlignment="CENTER" />
+          <Button id="openAccount" fx:id="withdrawMoneyBtn" alignment="CENTER" contentDisplay="CENTER" mnemonicParsing="false" onAction="#goToWithdrawPage" prefHeight="70.0" prefWidth="110.0" text="Withdraw Money" textAlignment="CENTER" />
+            <Button fx:id="depositMoneyBtn" alignment="CENTER" contentDisplay="CENTER" mnemonicParsing="false" onAction="#goToDepositPage" prefHeight="70.0" prefWidth="110.0" text="Deposit Money" />
         </buttons>
       </ButtonBar>
+      <Button fx:id="logOutBtn" layoutX="405.0" layoutY="385.0" mnemonicParsing="false" onAction="#logOut" prefHeight="50.0" prefWidth="90.0" text="Logout" />
    </children>
 </AnchorPane>

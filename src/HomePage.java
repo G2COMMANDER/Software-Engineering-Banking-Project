@@ -8,7 +8,6 @@ public class HomePage {
 
     @FXML
     private Button loginBtn;
-
     @FXML
     private Button reqActBtn;
 

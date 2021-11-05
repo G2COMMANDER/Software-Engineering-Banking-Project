@@ -2,18 +2,8 @@ import java.io.IOException;
 
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
-import javafx.scene.control.Button;
 
 public class UserAccountPage {
-
-    @FXML
-    private Button depositMoneyBtn;
-    @FXML
-    private Button logOutBtn;
-    @FXML
-    private Button transferMoneyBtn;
-    @FXML
-    private Button withdrawMoneyBtn;
 
     App m = new App();
 

@@ -27,7 +27,7 @@
       <Label layoutX="286.0" layoutY="233.0" text="Last Name" />
       <Label layoutX="284.0" layoutY="263.0" text="User Name" />
       <Label layoutX="292.0" layoutY="293.0" text="Password" />
-      <Button fx:id="reqActBtn" alignment="CENTER" contentDisplay="CENTER" layoutX="344.0" layoutY="360.0" mnemonicParsing="false" onAction="#sendAndReturn" prefHeight="60.0" prefWidth="149.0" text="Request Account" textAlignment="CENTER" wrapText="true">
+      <Button alignment="CENTER" contentDisplay="CENTER" layoutX="344.0" layoutY="360.0" mnemonicParsing="false" onAction="#sendAndReturn" prefHeight="60.0" prefWidth="149.0" text="Request Account" textAlignment="CENTER" wrapText="true">
          <font>
             <Font size="14.0" />
          </font>

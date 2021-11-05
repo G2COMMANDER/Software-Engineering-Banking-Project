@@ -15,8 +15,6 @@ public class RequestAccountPage {
     @FXML
     private PasswordField pass;
     @FXML
-    private Button reqActBtn;
-    @FXML
     private TextField uName;
 
     App m = new App();

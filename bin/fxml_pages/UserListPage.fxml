@@ -7,23 +7,23 @@
 <?import javafx.scene.text.Font?>
 
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="900.0" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="900.0" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="UserListPage">
    <children>
-      <TableView fx:id="userList" layoutX="162.0" layoutY="100.0">
-        <columns>
-            <TableColumn fx:id="userNameCol" prefWidth="75.0" text="User Name" />
-          <TableColumn fx:id="fNameCol" prefWidth="75.0" text="First Name" />
-          <TableColumn fx:id="lNameCol" prefWidth="75.0" text="Last name" />
-            <TableColumn fx:id="dobCol" prefWidth="100.0" text="Date of Birth" />
-            <TableColumn fx:id="cardInfoCol" prefWidth="75.0" text="Card Info" />
-            <TableColumn fx:id="lastAccessedCol" prefWidth="100.0" text="Last Accessed" />
-            <TableColumn fx:id="empStatCol" prefWidth="75.0" text="Employee" />
-        </columns>
-      </TableView>
       <Label alignment="CENTER" layoutX="370.0" layoutY="29.0" text="User List" textAlignment="CENTER">
          <font>
             <Font name="System Bold" size="40.0" />
          </font>
       </Label>
+      <TableView fx:id="userList" layoutX="162.0" layoutY="100.0">
+        <columns>
+            <TableColumn fx:id="userNameCol" editable="false" prefWidth="75.0" sortable="false" text="User Name" />
+          <TableColumn fx:id="fNameCol" editable="false" prefWidth="75.0" sortable="false" text="First Name" />
+          <TableColumn fx:id="lNameCol" editable="false" prefWidth="75.0" sortable="false" text="Last name" />
+            <TableColumn fx:id="dobCol" editable="false" prefWidth="100.0" sortable="false" text="Date of Birth" />
+            <TableColumn fx:id="cardInfoCol" editable="false" prefWidth="75.0" sortable="false" text="Card Info" />
+            <TableColumn fx:id="lastAccessedCol" editable="false" prefWidth="100.0" sortable="false" text="Last Accessed" />
+            <TableColumn fx:id="empStatCol" editable="false" prefWidth="75.0" sortable="false" text="Employee" />
+        </columns>
+      </TableView>
    </children>
 </AnchorPane>

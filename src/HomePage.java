@@ -8,6 +8,11 @@ public class HomePage {
     App m = new App();
 
     @FXML
+    void goToEmployeePage(ActionEvent event) {
+        m.changeScene("fxml_pages/EmployeeAccountPage.fxml");
+    }
+
+    @FXML
     void goToRequestPage(ActionEvent event) throws IOException {
         m.changeScene("fxml_pages/RequestAccountPage.fxml");
     }

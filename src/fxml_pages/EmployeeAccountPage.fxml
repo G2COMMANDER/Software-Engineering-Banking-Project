@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ButtonBar?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="900.0" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="EmployeeAccountPage">
+   <children>
+      <Label fx:id="name" alignment="CENTER" layoutX="436.0" layoutY="81.0" prefWidth="900.0" text="Welcome &quot;insert name here&quot;" textAlignment="CENTER" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0">
+         <font>
+            <Font size="24.0" />
+         </font>
+      </Label>
+      <ButtonBar layoutX="274.0" layoutY="240.0" nodeOrientation="RIGHT_TO_LEFT" prefHeight="118.0" prefWidth="370.0">
+        <buttons>
+            <Button alignment="CENTER" mnemonicParsing="false" onAction="#goToTransactionHistoryPage" prefHeight="70.0" prefWidth="110.0" text="View Users" textAlignment="CENTER" wrapText="true" />
+          <Button id="openAccount" alignment="CENTER" contentDisplay="CENTER" mnemonicParsing="false" onAction="#goToDeleteAccountsPage" prefHeight="70.0" prefWidth="110.0" text="Delete Accounts" textAlignment="CENTER" />
+            <Button alignment="CENTER" contentDisplay="CENTER" mnemonicParsing="false" onAction="#goToAcceptDenyPage" prefHeight="70.0" prefWidth="110.0" text="Accept/Deny Requests" textAlignment="CENTER" wrapText="true" />
+        </buttons>
+      </ButtonBar>
+      <Button layoutX="405.0" layoutY="385.0" mnemonicParsing="false" onAction="#logOut" prefHeight="50.0" prefWidth="90.0" text="Logout" />
+   </children>
+</AnchorPane>

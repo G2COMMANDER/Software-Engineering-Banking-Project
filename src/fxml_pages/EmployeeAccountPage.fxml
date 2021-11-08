@@ -15,11 +15,11 @@
       </Label>
       <ButtonBar layoutX="274.0" layoutY="240.0" nodeOrientation="RIGHT_TO_LEFT" prefHeight="118.0" prefWidth="370.0">
         <buttons>
-            <Button alignment="CENTER" mnemonicParsing="false" onAction="#goToTransactionHistoryPage" prefHeight="70.0" prefWidth="110.0" text="View Users" textAlignment="CENTER" wrapText="true" />
+            <Button alignment="CENTER" mnemonicParsing="false" onAction="#goToUserListPage" prefHeight="70.0" prefWidth="110.0" text="View Users" textAlignment="CENTER" wrapText="true" />
           <Button id="openAccount" alignment="CENTER" contentDisplay="CENTER" mnemonicParsing="false" onAction="#goToDeleteAccountsPage" prefHeight="70.0" prefWidth="110.0" text="Delete Accounts" textAlignment="CENTER" />
             <Button alignment="CENTER" contentDisplay="CENTER" mnemonicParsing="false" onAction="#goToAcceptDenyPage" prefHeight="70.0" prefWidth="110.0" text="Accept/Deny Requests" textAlignment="CENTER" wrapText="true" />
         </buttons>
       </ButtonBar>
-      <Button layoutX="405.0" layoutY="385.0" mnemonicParsing="false" onAction="#logOut" prefHeight="50.0" prefWidth="90.0" text="Logout" />
+      <Button contentDisplay="CENTER" layoutX="405.0" layoutY="385.0" mnemonicParsing="false" onAction="#logOut" prefHeight="50.0" prefWidth="90.0" text="Logout" />
    </children>
 </AnchorPane>

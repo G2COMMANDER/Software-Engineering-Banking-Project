@@ -22,8 +22,8 @@ public class EmployeeAccountPage {
     }
 
     @FXML
-    void goToTransactionHistoryPage(ActionEvent event) {
-
+    void goToUserListPage(ActionEvent event) throws IOException {
+        m.changeScene("fxml_pages/UserListPage.fxml");
     }
 
     @FXML

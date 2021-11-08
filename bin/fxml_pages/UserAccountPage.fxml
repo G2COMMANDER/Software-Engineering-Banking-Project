@@ -25,6 +25,6 @@
             <Button alignment="CENTER" contentDisplay="CENTER" mnemonicParsing="false" onAction="#goToDepositPage" prefHeight="70.0" prefWidth="110.0" text="Deposit Money" />
         </buttons>
       </ButtonBar>
-      <Button layoutX="405.0" layoutY="385.0" mnemonicParsing="false" onAction="#logOut" prefHeight="50.0" prefWidth="90.0" text="Logout" />
+      <Button alignment="CENTER" contentDisplay="CENTER" layoutX="405.0" layoutY="385.0" mnemonicParsing="false" onAction="#logOut" prefHeight="50.0" prefWidth="90.0" text="Logout" />
    </children>
 </AnchorPane>

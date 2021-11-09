@@ -72,9 +72,10 @@ public class HomePage {
                     Cell cell = cellIterator.next();
                     tmp = cell.getStringCellValue().toString();
 
-                    if (uName == tmp) {
+                    if (uName.equals(tmp)) {
                         checkCreds = true;
                         System.out.println("Found Password: " + cell.getStringCellValue());
+                        break;
                         
                     } else {
                         System.out.println("Password Incorrect: " + cell.getStringCellValue());
@@ -100,7 +101,15 @@ public class HomePage {
     @FXML
     void goToEmployeePage(ActionEvent event) throws IOException {
 
-        m.changeScene("fxml_pages/EmployeeAccountPage.fxml");
+        String uName = username.getText().toString();
+        String pWord = password.getText().toString();
+
+        if (uName.equals("banana") && pWord.equals("test")) {
+            m.changeScene("fxml_pages/EmployeeAccountPage.fxml");
+        } else {
+            System.out.println("Try again lmao");
+        }
+
     }
 
     @FXML

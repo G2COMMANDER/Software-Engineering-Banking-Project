@@ -74,11 +74,11 @@ public class HomePage {
 
                     if (uName.equals(tmp)) {
                         checkCreds = true;
-                        System.out.println("Found Password: " + cell.getStringCellValue());
+                        System.out.println(cell.getColumnIndex() + "Found Username: " + cell.getStringCellValue());
                         break;
                         
                     } else {
-                        System.out.println("Password Incorrect: " + cell.getStringCellValue());
+                        System.out.println(cell.getColumnIndex() + "incorrect Username: " + cell.getStringCellValue());
                         break;
                     }
 

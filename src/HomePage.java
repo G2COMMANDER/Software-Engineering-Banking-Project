@@ -1,11 +1,16 @@
+import java.io.File;
+import java.io.FileInputStream;
 import java.io.IOException;
 import java.math.BigInteger;
 import java.nio.charset.StandardCharsets;
 import java.security.MessageDigest;
 import java.security.NoSuchAlgorithmException;
-
-import org.apache.logging.log4j.message.Message;
-
+import java.util.Iterator;
+import org.apache.poi.ss.usermodel.Cell;
+import org.apache.poi.ss.usermodel.Row;
+import org.apache.poi.xssf.usermodel.XSSFCell;
+import org.apache.poi.xssf.usermodel.XSSFSheet;
+import org.apache.poi.xssf.usermodel.XSSFWorkbook;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.PasswordField;
@@ -20,13 +25,13 @@ public class HomePage {
 
     App m = new App();
 
-    public static byte[] getSHA256(String input) throws NoSuchAlgorithmException {
+    public static byte[] getSHA256(String input) throws NoSuchAlgorithmException { // https://www.geeksforgeeks.org/sha-256-hash-in-java/
 
         MessageDigest md = MessageDigest.getInstance("SHA-256");
         return md.digest(input.getBytes(StandardCharsets.UTF_8));
     }
 
-    public static String toHexString(byte[] hash) {
+    public static String toHexString(byte[] hash) { // https://www.geeksforgeeks.org/sha-256-hash-in-java/
         
         BigInteger number = new BigInteger(1, hash);
         StringBuilder hexString = new StringBuilder(number.toString(16));
@@ -37,6 +42,60 @@ public class HomePage {
         }
 
         return hexString.toString();
+    }
+
+    private boolean checkCredentials(String uName, String pWord) {
+
+        boolean checkCreds = false;
+        String tmp;
+        
+        try { // https://www.geeksforgeeks.org/reading-writing-data-excel-file-using-apache-poi/?ref=lbp
+            
+            FileInputStream file = new FileInputStream(new File("src/Database/Database.xlsx"));
+
+            // Create Workbook instance holding reference to Database.xlsx file
+            XSSFWorkbook workbook = new XSSFWorkbook(file);
+
+            // Get UserList sheet from Database.xlsx
+            XSSFSheet sheet = workbook.getSheetAt(0);
+
+            // Iterate through each rows one by one
+            Iterator<Row> rowIterator = sheet.iterator();
+            while (rowIterator.hasNext()) {
+                
+                Row row = rowIterator.next();
+                
+                
+                Iterator<Cell> cellIterator = row.cellIterator();
+
+                while (cellIterator.hasNext()) {
+                    
+                    Cell cell = cellIterator.next();
+                    tmp = cell.getStringCellValue().toString();
+
+                    if (uName == tmp) {
+                        checkCreds = true;
+                        System.out.println("Found Password: " + cell.getStringCellValue());
+                        
+                    } else {
+                        System.out.println("Password Incorrect: " + cell.getStringCellValue());
+                        break;
+                    }
+
+                }
+                
+
+            }
+
+            file.close();
+            workbook.close();
+
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+
+        return checkCreds;
+
     }
 
     @FXML
@@ -56,10 +115,14 @@ public class HomePage {
 
         String uName = username.getText().toString();
         String pWord = toHexString(getSHA256(password.getText().toString()));
+        String pWordTest = password.getText().toString();
 
-        System.out.println(uName + "\n" + pWord);
+        System.out.println(uName + "\n" + pWordTest + "\n" + pWord);
 
-        m.changeScene("fxml_pages/UserAccountPage.fxml");
+        if (checkCredentials(uName, pWord) == true) {
+            m.changeScene("fxml_pages/UserAccountPage.fxml");
+        }
+        
     }
 
 }

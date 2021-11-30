@@ -24,12 +24,14 @@ public class HomePage {
 
     App m = new App();
 
+    // this function is what encrypts the password to be stored in the database
     public static byte[] getSHA256(String input) throws NoSuchAlgorithmException { // https://www.geeksforgeeks.org/sha-256-hash-in-java/
 
         MessageDigest md = MessageDigest.getInstance("SHA-256");
         return md.digest(input.getBytes(StandardCharsets.UTF_8));
     }
 
+    // this function turns the encrypted password value into a string type
     public static String toHexString(byte[] hash) { // https://www.geeksforgeeks.org/sha-256-hash-in-java/
         
         BigInteger number = new BigInteger(1, hash);
@@ -43,10 +45,13 @@ public class HomePage {
         return hexString.toString();
     }
 
+    // this function checks the username and password. The heart of the login system
     private boolean checkCredentials(String uName, String pWord) {
 
-        boolean checkCreds = false;
-        String tmp;
+        boolean checkUserCreds = false;
+        boolean checkPassCreds = false;
+        String tmpUser;
+        String tmpPass;
         
         try { // https://www.geeksforgeeks.org/reading-writing-data-excel-file-using-apache-poi/?ref=lbp
             
@@ -58,6 +63,7 @@ public class HomePage {
             // Get UserList sheet from Database.xlsx
             XSSFSheet sheet = workbook.getSheetAt(0);
 
+            /*
             // Iterate through each rows one by one
             Iterator<Row> rowIterator = sheet.iterator();
             while (rowIterator.hasNext()) {
@@ -70,13 +76,14 @@ public class HomePage {
                 while (cellIterator.hasNext()) {
                     
                     Cell cell = cellIterator.next();
-                    tmp = cell.getStringCellValue().toString();
+                    tmpUser = cell.getStringCellValue().toString();
 
-                    if (uName.equals(tmp)) {
-                        checkCreds = true;
+                    // this checks for username matches
+                    if (uName.equals(tmpUser)) {
+                        checkUserCreds = true;
                         System.out.println(cell.getColumnIndex() + "Found Username: " + cell.getStringCellValue());
                         break;
-                        
+                    
                     } else {
                         System.out.println(cell.getColumnIndex() + "incorrect Username: " + cell.getStringCellValue());
                         break;
@@ -84,6 +91,27 @@ public class HomePage {
 
                 }
                 
+
+            }
+            */
+
+            // this checks the username 
+
+            // this checks the password
+            for (Row row : sheet) { // For each Row.
+                
+                Cell cell = row.getCell(7); // Get the Cell at the Index / Column you want.
+                tmpPass = cell.getStringCellValue().toString(); // turns it into a string
+                
+                // this checks if the password matches
+                if (pWord.equals(tmpPass)) {
+                    checkPassCreds = true;
+                    System.out.println(cell.getColumnIndex() + "Found Password: " + cell.getStringCellValue());
+                    break;
+                } else {
+                    System.out.println(cell.getColumnIndex() + "Incorrect Password: " + cell.getStringCellValue());
+                    break;
+                }
 
             }
 
@@ -94,7 +122,11 @@ public class HomePage {
             e.printStackTrace();
         }
 
-        return checkCreds;
+        if (checkUserCreds == true && checkPassCreds == true) {
+            return true;
+        } else {
+            return false;
+        }
 
     }
 

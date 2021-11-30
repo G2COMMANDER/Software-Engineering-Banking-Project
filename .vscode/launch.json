@@ -10,13 +10,13 @@
             "request": "launch",
             "vmArgs": "--module-path C:/Users/chris/Downloads/javafx-sdk-11.0.2/lib --add-modules javafx.controls,javafx.fxml",
             "mainClass": "App",
-            "projectName": "Software-Engineering-Banking-Project_a7f48fcf"
+            "projectName": "BankingProjectPhase2UI_f4386a8"
         },
         {
             "type": "java",
             "name": "Launch Current File",
             "request": "launch",
             "mainClass": "${file}"
-        }
+        }        
     ]
 }

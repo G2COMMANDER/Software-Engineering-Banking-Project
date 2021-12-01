@@ -48,8 +48,7 @@ public class HomePage {
     // this function checks the username and password. The heart of the login system
     private boolean checkCredentials(String uName, String pWord) {
 
-        boolean checkUserCreds = false;
-        boolean checkPassCreds = false;
+        boolean checkCreds = false;
         String tmpUser;
         String tmpPass;
         
@@ -95,22 +94,23 @@ public class HomePage {
             }
             */
 
-            // this checks the username 
 
-            // this checks the password
+            // this checks the username
             for (Row row : sheet) { // For each Row.
                 
-                Cell cell = row.getCell(7); // Get the Cell at the Index / Column you want.
-                tmpPass = cell.getStringCellValue().toString(); // turns it into a string
-                
-                // this checks if the password matches
-                if (pWord.equals(tmpPass)) {
-                    checkPassCreds = true;
-                    System.out.println(cell.getColumnIndex() + "Found Password: " + cell.getStringCellValue());
+                Cell userCell = row.getCell(0); // Get the Cell at the Index / Column you want.
+                Cell passCell = row.getCell(7); // Get the Cell at the Index / Column you want.
+                tmpUser = userCell.getStringCellValue().toString(); // turns it into a string
+                tmpPass = passCell.getStringCellValue().toString(); // turns it into a string
+
+                // checks if the username matches
+                if (uName.equals(tmpUser) && pWord.equals(tmpPass)) {
+                    checkCreds = true;
+                    System.out.println(userCell.getColumnIndex() + " Found Username: " + userCell.getStringCellValue());
+                    System.out.println(passCell.getColumnIndex() + " Found Password: " + passCell.getStringCellValue());
                     break;
                 } else {
-                    System.out.println(cell.getColumnIndex() + "Incorrect Password: " + cell.getStringCellValue());
-                    break;
+                    continue;
                 }
 
             }
@@ -119,14 +119,11 @@ public class HomePage {
             workbook.close();
 
         } catch (Exception e) {
-            e.printStackTrace();
+            System.out.println("Username or Password incorrect. Please try again.");
+            //e.printStackTrace();
         }
 
-        if (checkUserCreds == true && checkPassCreds == true) {
-            return true;
-        } else {
-            return false;
-        }
+        return checkCreds;
 
     }
 

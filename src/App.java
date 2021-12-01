@@ -7,10 +7,10 @@ import javafx.stage.Stage;
 
 public class App extends Application{
 
-    private static Stage stg;
+    private static Stage stage;
     @Override
     public void start(Stage primaryStage) throws Exception {
-        stg = primaryStage;
+        stage = primaryStage;
         primaryStage.setResizable(false);
         Parent root = FXMLLoader.load(getClass().getResource("fxml_pages/HomePage.fxml"));
         primaryStage.setTitle("Main Page");
@@ -20,7 +20,7 @@ public class App extends Application{
 
     public void changeScene(String fxml) throws IOException {
         Parent pane = FXMLLoader.load(getClass().getResource(fxml));
-        stg.getScene().setRoot(pane);
+        stage.getScene().setRoot(pane);
     }
 
     public static void main(String[] args) throws Exception {

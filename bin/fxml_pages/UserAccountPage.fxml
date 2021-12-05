@@ -20,11 +20,11 @@
       </Label>
       <ButtonBar layoutX="274.0" layoutY="240.0" nodeOrientation="RIGHT_TO_LEFT" prefHeight="118.0" prefWidth="370.0">
         <buttons>
-            <Button alignment="CENTER" mnemonicParsing="false" onAction="#goToTransferPage" prefHeight="70.0" prefWidth="110.0" text="Transfer Money" textAlignment="CENTER" />
+            <Button alignment="CENTER" contentDisplay="CENTER" mnemonicParsing="false" onAction="#goToTransferPage" prefHeight="70.0" prefWidth="110.0" text="Transfer Money" textAlignment="CENTER" />
           <Button id="openAccount" alignment="CENTER" contentDisplay="CENTER" mnemonicParsing="false" onAction="#goToWithdrawPage" prefHeight="70.0" prefWidth="110.0" text="Withdraw Money" textAlignment="CENTER" />
-            <Button alignment="CENTER" contentDisplay="CENTER" mnemonicParsing="false" onAction="#goToDepositPage" prefHeight="70.0" prefWidth="110.0" text="Deposit Money" />
+            <Button alignment="CENTER" contentDisplay="CENTER" mnemonicParsing="false" onAction="#goToDepositPage" prefHeight="70.0" prefWidth="110.0" text="Deposit Money" textAlignment="CENTER" />
         </buttons>
       </ButtonBar>
-      <Button alignment="CENTER" contentDisplay="CENTER" layoutX="405.0" layoutY="385.0" mnemonicParsing="false" onAction="#logOut" prefHeight="50.0" prefWidth="90.0" text="Logout" />
+      <Button alignment="CENTER" contentDisplay="CENTER" layoutX="405.0" layoutY="385.0" mnemonicParsing="false" onAction="#logOut" prefHeight="50.0" prefWidth="90.0" text="Logout" textAlignment="CENTER" />
    </children>
 </AnchorPane>

@@ -61,48 +61,15 @@ public class HomePage {
             // Get UserList sheet from Database.xlsx
             XSSFSheet sheet = workbook.getSheetAt(0);
 
-            /*
-            // Iterate through each rows one by one
-            Iterator<Row> rowIterator = sheet.iterator();
-            while (rowIterator.hasNext()) {
-                
-                Row row = rowIterator.next();
-                
-                
-                Iterator<Cell> cellIterator = row.cellIterator();
-
-                while (cellIterator.hasNext()) {
-                    
-                    Cell cell = cellIterator.next();
-                    tmpUser = cell.getStringCellValue().toString();
-
-                    // this checks for username matches
-                    if (uName.equals(tmpUser)) {
-                        checkUserCreds = true;
-                        System.out.println(cell.getColumnIndex() + "Found Username: " + cell.getStringCellValue());
-                        break;
-                    
-                    } else {
-                        System.out.println(cell.getColumnIndex() + "incorrect Username: " + cell.getStringCellValue());
-                        break;
-                    }
-
-                }
-                
-
-            }
-            */
-
-
-            // this checks the username
+            // this checks the username and password
             for (Row row : sheet) { // For each Row.
                 
                 Cell userCell = row.getCell(0); // Get the Cell at the Index / Column you want.
                 Cell passCell = row.getCell(7); // Get the Cell at the Index / Column you want.
-                tmpUser = userCell.getStringCellValue().toString(); // turns it into a string
-                tmpPass = passCell.getStringCellValue().toString(); // turns it into a string
+                tmpUser = userCell.getStringCellValue(); // turns it into a string
+                tmpPass = passCell.getStringCellValue(); // turns it into a string
 
-                // checks if the username matches
+                // checks if the username and password matches
                 if (uName.equals(tmpUser) && pWord.equals(tmpPass)) {
                     checkCreds = true;
                     System.out.println(userCell.getColumnIndex() + " Found Username: " + userCell.getStringCellValue());

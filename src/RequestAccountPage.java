@@ -105,13 +105,6 @@ public class RequestAccountPage {
                     break;
             default: break;
         }
-        /*
-        if (checkRequestedAccount(uName, fName, lName, pass, checkPass) == true) {
-            System.out.println("Account created successfully");
-        } else {
-            System.out.println("Please try again");
-        }
-        */
     }
 
     @FXML

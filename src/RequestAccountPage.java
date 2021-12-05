@@ -28,47 +28,48 @@ public class RequestAccountPage {
 
     App m = new App();
 
-    private boolean checkRequestedAccount(String uNameC, String fNameC, String lNameC, String passC, String checkPassC) {
+    private int checkRequestedAccount(String uNameC, String fNameC, String lNameC, String passC, String checkPassC) {
         
-        boolean checkReqAccCreds = true;
+        int checkReqAcc = 0;
         String tmpUName;
         String tmpFName;
         String tmpLName;
 
         try {
+
             FileInputStream file = new FileInputStream(new File("src/Database/Database.xlsx"));
 
             // Create Workbook instance holding reference to Database.xlsx file
             XSSFWorkbook workbook = new XSSFWorkbook(file);
 
             // Get UserList sheet from Database.xlsx
-            for (int i = 0; i < 1; i++) {
-                XSSFSheet sheet = workbook.getSheetAt(i);
-                System.out.println(sheet.getSheetName());
+            XSSFSheet sheet = workbook.getSheetAt(0);
 
-                // this checks the username, firstname, and lastname
-                for (Row row : sheet) { // For each Row.
-                    
-                    Cell uNameCell = row.getCell(0); // this is the username cell
-                    Cell fNameCell = row.getCell(1); // this is the first name cell
-                    Cell lNameCell = row.getCell(2); // this is the last name cell
+            // this checks the username, firstname, and lastname
+            for (Row row : sheet) { // For each Row.
+                
+                Cell uNameCell = row.getCell(0); // this is the username cell
+                Cell fNameCell = row.getCell(1); // this is the first name cell
+                Cell lNameCell = row.getCell(2); // this is the last name cell
 
-                    tmpUName = uNameCell.getStringCellValue();
-                    tmpFName = fNameCell.getStringCellValue();
-                    tmpLName = lNameCell.getStringCellValue();
+                tmpUName = uNameCell.getStringCellValue();
+                tmpFName = fNameCell.getStringCellValue();
+                tmpLName = lNameCell.getStringCellValue();
 
-                    if (fNameC.equals(tmpFName) && lNameC.equals(tmpLName)) { // checks is first and last name exist
-                        checkReqAccCreds = false;
-                        System.out.println(fNameCell.getColumnIndex() + " This user already exists: " + fNameCell.getStringCellValue() + " " + lNameCell.getStringCellValue());
-                    } else if (uNameC.equals(tmpUName)) { // checks if the username already exists
-                        checkReqAccCreds = false;
-                        System.out.println(uNameCell.getColumnIndex() + " Username already exists: " + uNameCell.getStringCellValue());
-                    } else if (!passC.equals(checkPassC)) { // checks if the passwords match
-                        checkReqAccCreds = false;
-                        System.out.println("Passwords do not match, please try again.");
-                    } else {
-                        continue;
-                    }
+                if (fNameC.equals(tmpFName) && lNameC.equals(tmpLName)) { // checks is first and last name exist
+                    checkReqAcc = 1;
+                    System.out.println("The user \"" + fNameCell.getStringCellValue() + " " + lNameCell.getStringCellValue() + "\" already exists");
+                    break;
+                } else if (uNameC.equals(tmpUName)) { // checks if the username already exists
+                    checkReqAcc = 2;
+                    System.out.println("The username \"" + uNameCell.getStringCellValue() + "\" already exists");
+                    break;
+                } else if (!passC.equals(checkPassC)) { // checks if the passwords match
+                    checkReqAcc = 3;
+                    System.out.println("Passwords do not match, please try again.");
+                    break;
+                } else {
+                    continue;
                 }
             }
 
@@ -76,11 +77,10 @@ public class RequestAccountPage {
             workbook.close();
 
         } catch (Exception e) {
-            checkReqAccCreds = false;
-            System.out.println("Something broke?");
+            System.out.println("Something broke lol?");
         }
         
-        return checkReqAccCreds;
+        return checkReqAcc;
     }
     
     @FXML
@@ -92,11 +92,26 @@ public class RequestAccountPage {
         String pass = password.getText().toString();
         String checkPass = checkPassword.getText().toString();
 
+        int test = checkRequestedAccount(uName, fName, lName, pass, checkPass);
+
+        switch (test) {
+            case 0: System.out.println("Account created successfully!");
+                    break;
+            case 1: System.out.println("Add the first/last name scenebuilder thing here");
+                    break;
+            case 2: System.out.println("Add the username scenebuilder thing here");
+                    break;
+            case 3: System.out.println("Add scenebuilder password thing here");
+                    break;
+            default: break;
+        }
+        /*
         if (checkRequestedAccount(uName, fName, lName, pass, checkPass) == true) {
             System.out.println("Account created successfully");
         } else {
             System.out.println("Please try again");
         }
+        */
     }
 
     @FXML

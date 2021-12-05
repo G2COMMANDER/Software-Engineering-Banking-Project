@@ -1,5 +1,4 @@
 import java.io.IOException;
-
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.Label;
@@ -14,17 +13,17 @@ public class UserAccountPage {
     private Label name;
 
     @FXML
-    void goToDepositPage(ActionEvent event) {
+    void goToTransactHistoryPage(ActionEvent event) {
 
     }
 
     @FXML
-    void goToTransferPage(ActionEvent event) {
+    void goToTransferMoneyPage(ActionEvent event) {
 
     }
 
     @FXML
-    void goToWithdrawPage(ActionEvent event) {
+    void goToUserInfoPage(ActionEvent event) {
 
     }
 

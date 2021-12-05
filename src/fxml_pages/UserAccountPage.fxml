@@ -8,23 +8,28 @@
 
 <AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="900.0" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="UserAccountPage">
    <children>
-      <Label fx:id="name" alignment="CENTER" layoutX="436.0" layoutY="81.0" prefWidth="900.0" text="Welcome &quot;insert name here&quot;" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0">
+      <Label alignment="CENTER" contentDisplay="CENTER" layoutX="244.0" layoutY="46.0" prefHeight="35.0" prefWidth="413.0" text="Welcome " textAlignment="CENTER">
          <font>
             <Font size="24.0" />
          </font>
       </Label>
-      <Label fx:id="balanceAmount" alignment="CENTER" layoutX="288.0" layoutY="116.0" text="&quot;insert account balance amount here&quot;" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="180.0">
+      <Label fx:id="balanceAmount" alignment="CENTER" layoutY="154.0" text="&quot;insert account balance amount here&quot;" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="154.0">
          <font>
             <Font size="20.0" />
          </font>
       </Label>
       <ButtonBar layoutX="274.0" layoutY="240.0" nodeOrientation="RIGHT_TO_LEFT" prefHeight="118.0" prefWidth="370.0">
         <buttons>
-            <Button alignment="CENTER" contentDisplay="CENTER" mnemonicParsing="false" onAction="#goToTransferPage" prefHeight="70.0" prefWidth="110.0" text="Transfer Money" textAlignment="CENTER" />
-          <Button id="openAccount" alignment="CENTER" contentDisplay="CENTER" mnemonicParsing="false" onAction="#goToWithdrawPage" prefHeight="70.0" prefWidth="110.0" text="Withdraw Money" textAlignment="CENTER" />
-            <Button alignment="CENTER" contentDisplay="CENTER" mnemonicParsing="false" onAction="#goToDepositPage" prefHeight="70.0" prefWidth="110.0" text="Deposit Money" textAlignment="CENTER" />
+            <Button alignment="CENTER" contentDisplay="CENTER" mnemonicParsing="false" onAction="#goToTransferMoneyPage" prefHeight="70.0" prefWidth="110.0" text="Transfer Money" textAlignment="CENTER" />
+          <Button id="openAccount" alignment="CENTER" contentDisplay="CENTER" mnemonicParsing="false" onAction="#goToTransactHistoryPage" prefHeight="70.0" prefWidth="110.0" text="Transaction History" textAlignment="CENTER" wrapText="true" />
+            <Button alignment="CENTER" contentDisplay="CENTER" mnemonicParsing="false" onAction="#goToUserInfoPage" prefHeight="70.0" prefWidth="110.0" text="User Info" textAlignment="CENTER" />
         </buttons>
       </ButtonBar>
       <Button alignment="CENTER" contentDisplay="CENTER" layoutX="405.0" layoutY="385.0" mnemonicParsing="false" onAction="#logOut" prefHeight="50.0" prefWidth="90.0" text="Logout" textAlignment="CENTER" />
+      <Label fx:id="name" layoutX="349.0" layoutY="81.0" text="&quot;Insert Name here&quot;">
+         <font>
+            <Font size="24.0" />
+         </font>
+      </Label>
    </children>
 </AnchorPane>

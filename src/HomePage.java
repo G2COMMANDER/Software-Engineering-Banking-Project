@@ -45,11 +45,12 @@ public class HomePage {
     }
 
     // this function checks the username and password. The heart of the login system
-    private boolean checkCredentials(String uName, String pWord) {
+    private int checkCredentials(String uName, String pWord) {
 
-        boolean checkCreds = false;
+        int checkCreds = 0;
         String tmpUser;
         String tmpPass;
+        String tmpEmployee;
         
         try { // https://www.geeksforgeeks.org/reading-writing-data-excel-file-using-apache-poi/?ref=lbp
             
@@ -66,19 +67,27 @@ public class HomePage {
                 
                 Cell userCell = row.getCell(0); // Get the Cell at the Index / Column you want.
                 Cell passCell = row.getCell(7); // Get the Cell at the Index / Column you want.
+                Cell employeeCell = row.getCell(6); // Get the Cell at the Index / Column you want.
                 tmpUser = userCell.getStringCellValue(); // turns it into a string
                 tmpPass = passCell.getStringCellValue(); // turns it into a string
+                tmpEmployee = employeeCell.getStringCellValue(); // turns it into a string
 
-                // checks if the username and password matches
-                if (uName.equals(tmpUser) && pWord.equals(tmpPass)) {
-                    checkCreds = true;
+                // checks if the username and password matches. Then it checks if the user is an employee
+                if (uName.equals(tmpUser) && pWord.equals(tmpPass) && tmpEmployee.equals("f")) {
+                    checkCreds += 1;
                     System.out.println(userCell.getColumnIndex() + " Found Username: " + userCell.getStringCellValue());
                     System.out.println(passCell.getColumnIndex() + " Found Password: " + passCell.getStringCellValue());
+                    System.out.println(employeeCell.getColumnIndex() + " Employee Status: " + employeeCell.getStringCellValue());
+                    break;
+                } else if (uName.equals(tmpUser) && pWord.equals(tmpPass) && tmpEmployee.equals("t")){
+                    checkCreds += 3;
+                    System.out.println(userCell.getColumnIndex() + " Found Username: " + userCell.getStringCellValue());
+                    System.out.println(passCell.getColumnIndex() + " Found Password: " + passCell.getStringCellValue());
+                    System.out.println(employeeCell.getColumnIndex() + " Employee Status: " + employeeCell.getStringCellValue());
                     break;
                 } else {
                     continue;
                 }
-
             }
 
             file.close();
@@ -88,23 +97,7 @@ public class HomePage {
             System.out.println("Username or Password incorrect. Please try again.");
             //e.printStackTrace();
         }
-
         return checkCreds;
-
-    }
-
-    @FXML
-    void goToEmployeePage(ActionEvent event) throws IOException {
-
-        String uName = username.getText().toString();
-        String pWord = password.getText().toString();
-
-        if (uName.equals("banana") && pWord.equals("test")) {
-            m.changeScene("fxml_pages/EmployeeAccountPage.fxml");
-        } else {
-            System.out.println("Try again lmao");
-        }
-
     }
 
     @FXML
@@ -122,10 +115,16 @@ public class HomePage {
 
         System.out.println(uName + "\n" + pWordTest + "\n" + pWord);
 
-        if (checkCredentials(uName, pWord) == true) {
-            m.changeScene("fxml_pages/UserAccountPage.fxml");
-        }
-        
-    }
+        Integer login = checkCredentials(uName, pWord);
+        System.out.println("This is the login number " + login);
 
+        switch (login) {
+            case 1: m.changeScene("fxml_pages/UserAccountPage.fxml");
+                    break;
+            case 3: m.changeScene("fxml_pages/EmployeeAccountPage.fxml");
+                    break;
+            default: System.out.println("Login Erorr, please try again.");
+                    break;
+        }
+    }
 }

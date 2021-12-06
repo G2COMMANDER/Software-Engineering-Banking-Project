@@ -21,42 +21,6 @@ public class HomePage {
     @FXML
     private TextField username;
 
-    private String objUName;
-    private String objFName;
-    private String objLName;
-
-    /*
-    HomePage() {
-        this.objUName = "x";
-        this.objFName = "y";
-        this.objLName = "z";
-    }
-
-    public String getUName() {
-        return this.objUName;
-    }
-
-    public void setUName(String u) {
-        this.objUName = u;
-    }
-
-    public String getFName() {
-        return this.objFName;
-    }
-
-    public void setFName(String f) {
-        this.objFName = f;
-    }
-
-    public String getLName() {
-        return this.objLName;
-    }
-
-    public void setLName(String l) {
-        this.objLName = l;
-    }
-
-    */
     App m = new App();
 
     // this function is what encrypts the password to be stored in the database
@@ -85,6 +49,8 @@ public class HomePage {
 
         int checkCreds = 0;
         String tmpUser;
+        String tmpFName;
+        String tmpLName;
         String tmpPass;
         String tmpEmployee;
         
@@ -102,9 +68,13 @@ public class HomePage {
             for (Row row : sheet) { // For each Row.
                 
                 Cell userCell = row.getCell(0); // Get the Cell at the Index / Column you want.
-                Cell passCell = row.getCell(7); // Get the Cell at the Index / Column you want.
-                Cell employeeCell = row.getCell(6); // Get the Cell at the Index / Column you want.
+                Cell fNameCell = row.getCell(1); // Get the Cell at the Index / Column you want.
+                Cell lNameCell = row.getCell(2); // Get the Cell at the Index / Column you want.
+                Cell passCell = row.getCell(6); // Get the Cell at the Index / Column you want.
+                Cell employeeCell = row.getCell(5); // Get the Cell at the Index / Column you want.
                 tmpUser = userCell.getStringCellValue(); // turns it into a string
+                tmpFName = fNameCell.getStringCellValue(); // turns it into a string
+                tmpLName = lNameCell.getStringCellValue(); // turns it into a string
                 tmpPass = passCell.getStringCellValue(); // turns it into a string
                 tmpEmployee = employeeCell.getStringCellValue(); // turns it into a string
 
@@ -114,6 +84,9 @@ public class HomePage {
                     System.out.println(userCell.getColumnIndex() + " Found Username: " + userCell.getStringCellValue());
                     System.out.println(passCell.getColumnIndex() + " Found Password: " + passCell.getStringCellValue());
                     System.out.println(employeeCell.getColumnIndex() + " Employee Status: " + employeeCell.getStringCellValue());
+                    App.usah = tmpUser;
+                    App.efName = tmpFName;
+                    App.elName = tmpLName;
                     break;
                 } else if (uName.equals(tmpUser) && pWord.equals(tmpPass) && tmpEmployee.equals("t")){
                     checkCreds += 3;
@@ -157,7 +130,6 @@ public class HomePage {
 
         switch (login) {
             case 1: m.changeScene("fxml_pages/UserAccountPage.fxml");
-                    App.usah = uName;
                     break;
             case 3: m.changeScene("fxml_pages/EmployeeAccountPage.fxml");
                     break;

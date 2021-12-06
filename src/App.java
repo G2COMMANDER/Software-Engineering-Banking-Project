@@ -8,6 +8,8 @@ import javafx.stage.Stage;
 public class App extends Application{
 
     static String usah;
+    static String efName;
+    static String elName;
 
     private static Stage stage;
     @Override

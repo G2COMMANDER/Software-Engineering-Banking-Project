@@ -51,6 +51,7 @@ public class HomePage {
         String tmpUser;
         String tmpFName;
         String tmpLName;
+        String tmpCardNumber;
         String tmpPass;
         String tmpEmployee;
         
@@ -70,11 +71,13 @@ public class HomePage {
                 Cell userCell = row.getCell(0); // Get the Cell at the Index / Column you want.
                 Cell fNameCell = row.getCell(1); // Get the Cell at the Index / Column you want.
                 Cell lNameCell = row.getCell(2); // Get the Cell at the Index / Column you want.
+                Cell cardNumberCell = row.getCell(4); // Get the Cell at the Index / Column you want.
                 Cell passCell = row.getCell(6); // Get the Cell at the Index / Column you want.
                 Cell employeeCell = row.getCell(5); // Get the Cell at the Index / Column you want.
                 tmpUser = userCell.getStringCellValue(); // turns it into a string
                 tmpFName = fNameCell.getStringCellValue(); // turns it into a string
                 tmpLName = lNameCell.getStringCellValue(); // turns it into a string
+                //tmpCardNumber = cardNumberCell.getStringCellValue(); // turns it into a string
                 tmpPass = passCell.getStringCellValue(); // turns it into a string
                 tmpEmployee = employeeCell.getStringCellValue(); // turns it into a string
 
@@ -87,6 +90,7 @@ public class HomePage {
                     App.usah = tmpUser;
                     App.efName = tmpFName;
                     App.elName = tmpLName;
+                    //App.cardNumbah = tmpCardNumber;
                     break;
                 } else if (uName.equals(tmpUser) && pWord.equals(tmpPass) && tmpEmployee.equals("t")){
                     checkCreds += 3;

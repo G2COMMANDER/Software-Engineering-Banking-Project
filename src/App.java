@@ -7,6 +7,8 @@ import javafx.stage.Stage;
 
 public class App extends Application{
 
+    static String usah;
+
     private static Stage stage;
     @Override
     public void start(Stage primaryStage) throws Exception {

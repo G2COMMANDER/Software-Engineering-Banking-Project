@@ -6,7 +6,7 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="900.0" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="UserAccountPage">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" onKeyPressed="#refreshPage" prefHeight="600.0" prefWidth="900.0" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="UserAccountPage">
    <children>
       <Label alignment="CENTER" contentDisplay="CENTER" layoutX="244.0" layoutY="46.0" prefHeight="35.0" prefWidth="413.0" text="Welcome " textAlignment="CENTER">
          <font>
@@ -26,7 +26,7 @@
         </buttons>
       </ButtonBar>
       <Button alignment="CENTER" contentDisplay="CENTER" layoutX="405.0" layoutY="385.0" mnemonicParsing="false" onAction="#logOut" prefHeight="50.0" prefWidth="90.0" text="Logout" textAlignment="CENTER" />
-      <Label fx:id="name" layoutX="349.0" layoutY="81.0" text="&quot;Insert Name here&quot;">
+      <Label fx:id="name" alignment="CENTER" contentDisplay="CENTER" layoutX="349.0" layoutY="81.0" text="&quot;Insert Name here&quot;" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0">
          <font>
             <Font size="24.0" />
          </font>

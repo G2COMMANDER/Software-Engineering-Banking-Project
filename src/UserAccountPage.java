@@ -2,6 +2,7 @@ import java.io.IOException;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.Label;
+import javafx.scene.input.KeyEvent;
 
 public class UserAccountPage {
 
@@ -14,22 +15,28 @@ public class UserAccountPage {
 
     @FXML
     void goToTransactHistoryPage(ActionEvent event) {
-
+        //m.changeScene("fxml_pages/TransactionHistoryPage.fxml");
     }
 
     @FXML
     void goToTransferMoneyPage(ActionEvent event) {
-
+        name.setText(App.usah);
+        //m.changeScene("fxml_pages/TransferMoneyPage.fxml");
     }
 
     @FXML
     void goToUserInfoPage(ActionEvent event) {
-
+        //m.changeScene("fxml_pages/UserInfoPage.fxml");
     }
 
     @FXML
     void logOut(ActionEvent event) throws IOException {
         m.changeScene("fxml_pages/HomePage.fxml");
+    }
+
+    @FXML
+    void refreshPage(KeyEvent event) {
+        name.setText(App.efName + " " + App.elName);
     }
 
 }

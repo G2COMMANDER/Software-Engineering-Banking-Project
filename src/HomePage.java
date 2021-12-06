@@ -51,7 +51,7 @@ public class HomePage {
         String tmpUser;
         String tmpFName;
         String tmpLName;
-        String tmpCardNumber;
+        //String tmpCardNumber;
         String tmpPass;
         String tmpEmployee;
         
@@ -71,7 +71,7 @@ public class HomePage {
                 Cell userCell = row.getCell(0); // Get the Cell at the Index / Column you want.
                 Cell fNameCell = row.getCell(1); // Get the Cell at the Index / Column you want.
                 Cell lNameCell = row.getCell(2); // Get the Cell at the Index / Column you want.
-                Cell cardNumberCell = row.getCell(4); // Get the Cell at the Index / Column you want.
+                //Cell cardNumberCell = row.getCell(4); // Get the Cell at the Index / Column you want.
                 Cell passCell = row.getCell(6); // Get the Cell at the Index / Column you want.
                 Cell employeeCell = row.getCell(5); // Get the Cell at the Index / Column you want.
                 tmpUser = userCell.getStringCellValue(); // turns it into a string

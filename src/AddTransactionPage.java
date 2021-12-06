@@ -32,8 +32,7 @@ public class AddTransactionPage {
 
     private void writeToExcel(int nSheet) {
 
-        int nAmount = Integer.parseInt(Amount.getText());
-        //String nAmount = Amount.getText().toString();
+        String nAmount = Amount.getText().toString();
         String nTime = Time.getText().toString();
         String nDate = Date.getText().toString();
         String nLocation = Location.getText().toString();
@@ -59,7 +58,7 @@ public class AddTransactionPage {
                 cell.setCellValue(rowCount);
 
                 for (Object field : anInput) {
-                    cell = row.createCell(++columnCount);
+                    cell = row.createCell(columnCount++);
                     if (field instanceof String) {
                         cell.setCellValue((String) field);
                     } else if (field instanceof Integer) {

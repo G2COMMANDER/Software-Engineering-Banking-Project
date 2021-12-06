@@ -37,9 +37,11 @@ public class AddTransactionPage {
         String nDate = Date.getText().toString();
         String nLocation = Location.getText().toString();
 
+        String userDatabaseFile = ("src/Database/UserInformation/" + App.usah + ".xlsx");
+
         try{
 
-            FileInputStream file = new FileInputStream(new File("src/Database/UserInformation/banana.xlsx"));
+            FileInputStream file = new FileInputStream(new File(userDatabaseFile));
             XSSFWorkbook workbook = new XSSFWorkbook(file);
             XSSFSheet sheet = workbook.getSheetAt(nSheet);
 
@@ -69,7 +71,7 @@ public class AddTransactionPage {
 
             file.close();
 
-            FileOutputStream fileOutput = new FileOutputStream("src/Database/UserInformation/banana.xlsx");
+            FileOutputStream fileOutput = new FileOutputStream(userDatabaseFile);
             workbook.write(fileOutput);
             workbook.close();
             fileOutput.close();

@@ -4,8 +4,6 @@ import java.io.FileOutputStream;
 import java.io.IOException;
 import org.apache.poi.ss.usermodel.Cell;
 import org.apache.poi.ss.usermodel.Row;
-import org.apache.poi.ss.usermodel.Sheet;
-import org.apache.poi.ss.usermodel.Workbook;
 import org.apache.poi.xssf.usermodel.XSSFSheet;
 import org.apache.poi.xssf.usermodel.XSSFWorkbook;
 import javafx.event.ActionEvent;
@@ -34,7 +32,8 @@ public class AddTransactionPage {
 
     private void writeToExcel(int nSheet) {
 
-        String nAmount = Amount.getText().toString();
+        int nAmount = Integer.parseInt(Amount.getText());
+        //String nAmount = Amount.getText().toString();
         String nTime = Time.getText().toString();
         String nDate = Date.getText().toString();
         String nLocation = Location.getText().toString();
@@ -123,7 +122,7 @@ public class AddTransactionPage {
 
     @FXML
     void refreshPage(KeyEvent event) {
-        int sheetNum = 0;
+        //int sheetNum = 0;
         //getBalanceAmount(sheetNum);
     }
 

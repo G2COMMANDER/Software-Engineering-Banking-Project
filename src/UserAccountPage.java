@@ -19,6 +19,11 @@ public class UserAccountPage {
     }
 
     @FXML
+    void goToAddTransactionPage(ActionEvent event) throws IOException {
+        m.changeScene("fxml_pages/AddTransactionPage.fxml");
+    }
+
+    @FXML
     void goToTransferMoneyPage(ActionEvent event) {
         //m.changeScene("fxml_pages/TransferMoneyPage.fxml");
     }

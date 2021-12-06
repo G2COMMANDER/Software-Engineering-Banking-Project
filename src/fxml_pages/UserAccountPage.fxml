@@ -18,9 +18,10 @@
             <Font size="20.0" />
          </font>
       </Label>
-      <ButtonBar layoutX="274.0" layoutY="240.0" nodeOrientation="RIGHT_TO_LEFT" prefHeight="118.0" prefWidth="370.0">
+      <ButtonBar layoutX="220.0" layoutY="241.0" nodeOrientation="RIGHT_TO_LEFT" prefHeight="118.0" prefWidth="474.0">
         <buttons>
-            <Button alignment="CENTER" contentDisplay="CENTER" mnemonicParsing="false" onAction="#goToTransferMoneyPage" prefHeight="70.0" prefWidth="110.0" text="Transfer Money" textAlignment="CENTER" />
+            <Button alignment="CENTER" contentDisplay="CENTER" mnemonicParsing="false" onAction="#goToTransferMoneyPage" prefHeight="70.0" prefWidth="110.0" text="Transfer Money" textAlignment="CENTER" wrapText="true" />
+            <Button alignment="CENTER" contentDisplay="CENTER" mnemonicParsing="false" onAction="#goToAddTransactionPage" prefHeight="70.0" prefWidth="110.0" text="Add to Transaction History" textAlignment="CENTER" wrapText="true" />
           <Button id="openAccount" alignment="CENTER" contentDisplay="CENTER" mnemonicParsing="false" onAction="#goToTransactHistoryPage" prefHeight="70.0" prefWidth="110.0" text="Transaction History" textAlignment="CENTER" wrapText="true" />
             <Button alignment="CENTER" contentDisplay="CENTER" mnemonicParsing="false" onAction="#goToUserInfoPage" prefHeight="70.0" prefWidth="110.0" text="User Info" textAlignment="CENTER" />
         </buttons>

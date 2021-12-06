@@ -20,13 +20,12 @@ public class UserAccountPage {
 
     @FXML
     void goToTransferMoneyPage(ActionEvent event) {
-        name.setText(App.usah);
         //m.changeScene("fxml_pages/TransferMoneyPage.fxml");
     }
 
     @FXML
-    void goToUserInfoPage(ActionEvent event) {
-        //m.changeScene("fxml_pages/UserInfoPage.fxml");
+    void goToUserInfoPage(ActionEvent event) throws IOException {
+        m.changeScene("fxml_pages/UserInfoPage.fxml");
     }
 
     @FXML

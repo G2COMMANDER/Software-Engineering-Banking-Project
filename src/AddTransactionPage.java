@@ -77,6 +77,13 @@ public class AddTransactionPage {
         } catch (Exception e) {
             System.out.print("Try again lmao");
         }
+        switch (nSheet){
+            case 1: System.out.println("Withdraw data successfully written.");
+                    break;
+            case 2: System.out.println("Deposit data successfully written.");
+                    break;
+            default: break;
+        }
     }
 
     /*

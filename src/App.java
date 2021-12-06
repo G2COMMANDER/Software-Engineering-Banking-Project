@@ -10,6 +10,7 @@ public class App extends Application{
     static String usah;
     static String efName;
     static String elName;
+    static String cardNumbah;
 
     private static Stage stage;
     @Override

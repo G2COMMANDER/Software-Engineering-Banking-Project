@@ -21,6 +21,42 @@ public class HomePage {
     @FXML
     private TextField username;
 
+    private String objUName;
+    private String objFName;
+    private String objLName;
+
+    /*
+    HomePage() {
+        this.objUName = "x";
+        this.objFName = "y";
+        this.objLName = "z";
+    }
+
+    public String getUName() {
+        return this.objUName;
+    }
+
+    public void setUName(String u) {
+        this.objUName = u;
+    }
+
+    public String getFName() {
+        return this.objFName;
+    }
+
+    public void setFName(String f) {
+        this.objFName = f;
+    }
+
+    public String getLName() {
+        return this.objLName;
+    }
+
+    public void setLName(String l) {
+        this.objLName = l;
+    }
+
+    */
     App m = new App();
 
     // this function is what encrypts the password to be stored in the database
@@ -97,6 +133,7 @@ public class HomePage {
             System.out.println("Username or Password incorrect. Please try again.");
             //e.printStackTrace();
         }
+
         return checkCreds;
     }
 
@@ -120,6 +157,7 @@ public class HomePage {
 
         switch (login) {
             case 1: m.changeScene("fxml_pages/UserAccountPage.fxml");
+                    App.usah = uName;
                     break;
             case 3: m.changeScene("fxml_pages/EmployeeAccountPage.fxml");
                     break;

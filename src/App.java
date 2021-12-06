@@ -11,6 +11,7 @@ public class App extends Application{
     static String efName;
     static String elName;
     static String cardNumbah;
+    static String balanceAmountuh;
 
     private static Stage stage;
     @Override

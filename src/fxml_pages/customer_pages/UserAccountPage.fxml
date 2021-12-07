@@ -7,7 +7,7 @@
 <?import javafx.scene.shape.Rectangle?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" onKeyPressed="#refreshPage" prefHeight="600.0" prefWidth="900.0" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="UserAccountPage">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="900.0" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="UserAccountPage">
     <children>
       <Rectangle fill="#80bfff" height="80.0" layoutY="-1.0" stroke="TRANSPARENT" strokeType="INSIDE" width="900.0" />
         <Button alignment="CENTER" contentDisplay="CENTER" layoutX="795.0" layoutY="15.0" mnemonicParsing="false" onAction="#logOut" prefHeight="50.0" prefWidth="90.0" text="Log Out" textAlignment="CENTER">

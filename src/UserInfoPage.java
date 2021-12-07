@@ -16,14 +16,13 @@ public class UserInfoPage {
     @FXML
     private Label doBLabel;
 
-    @FXML
-    void refreshPage(ActionEvent event) {
+    public void initialize() {
         fNameLabel.setText(App.efName);
         lNameLabel.setText(App.elName);
         uNameLabel.setText(App.usah);
         doBLabel.setText(App.birth);
     }
-    
+
     @FXML
     void returnHome(ActionEvent event) throws IOException {
         m.changeScene("fxml_pages/customer_pages/UserAccountPage.fxml");

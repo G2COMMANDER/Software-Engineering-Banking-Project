@@ -23,7 +23,7 @@ public class EmployeeAccountPage {
 
     @FXML
     void goToUserListPage(ActionEvent event) throws IOException {
-        m.changeScene("fxml_pages/UserListPage.fxml");
+        m.changeScene("src/fxml_pages/employee_pages/UserListPage.fxml");
     }
 
     @FXML

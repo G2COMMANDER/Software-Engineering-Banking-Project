@@ -27,7 +27,7 @@ public class UserInfoPage {
     
     @FXML
     void returnHome(ActionEvent event) throws IOException {
-        m.changeScene("fxml_pages/UserAccountPage.fxml");
+        m.changeScene("src/fxml_pages/customer_pages/UserAccountPage.fxml");
     }
 
 }

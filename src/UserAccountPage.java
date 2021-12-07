@@ -15,22 +15,22 @@ public class UserAccountPage {
 
     @FXML
     void goToTransactHistoryPage(ActionEvent event) {
-        //m.changeScene("fxml_pages/TransactionHistoryPage.fxml");
+        //m.changeScene("src/fxml_pages/customer_pages/TransactionHistoryPage.fxml");
     }
 
     @FXML
     void goToAddTransactionPage(ActionEvent event) throws IOException {
-        m.changeScene("fxml_pages/AddTransactionPage.fxml");
+        m.changeScene("src/fxml_pages/customer_pages/AddTransactionPage.fxml");
     }
 
     @FXML
     void goToTransferMoneyPage(ActionEvent event) {
-        //m.changeScene("fxml_pages/TransferMoneyPage.fxml");
+        //m.changeScene("src/fxml_pages/customer_pages/TransferMoneyPage.fxml");
     }
 
     @FXML
     void goToUserInfoPage(ActionEvent event) throws IOException {
-        m.changeScene("fxml_pages/UserInfoPage.fxml");
+        m.changeScene("src/fxml_pages/customer_pages/UserInfoPage.fxml");
     }
 
     @FXML

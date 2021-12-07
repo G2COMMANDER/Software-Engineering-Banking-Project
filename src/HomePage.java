@@ -133,9 +133,9 @@ public class HomePage {
         System.out.println("This is the login number " + login);
 
         switch (login) {
-            case 1: m.changeScene("fxml_pages/UserAccountPage.fxml");
+            case 1: m.changeScene("src/fxml_pages/customer_pages/UserAccountPage.fxml");
                     break;
-            case 3: m.changeScene("fxml_pages/EmployeeAccountPage.fxml");
+            case 3: m.changeScene("src/fxml_pages/employee_pages/EmployeeAccountPage.fxml");
                     break;
             default: System.out.println("Login Erorr, please try again.");
                     break;

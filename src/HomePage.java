@@ -6,6 +6,8 @@ import java.nio.charset.StandardCharsets;
 import java.security.MessageDigest;
 import java.security.NoSuchAlgorithmException;
 import org.apache.poi.ss.usermodel.Cell;
+import org.apache.poi.ss.usermodel.CellType;
+import org.apache.poi.ss.usermodel.DateUtil;
 import org.apache.poi.ss.usermodel.Row;
 import org.apache.poi.xssf.usermodel.XSSFSheet;
 import org.apache.poi.xssf.usermodel.XSSFWorkbook;
@@ -51,6 +53,7 @@ public class HomePage {
         String tmpUser;
         String tmpFName;
         String tmpLName;
+        String tmpDateOfBirth = "oops";
         //String tmpCardNumber;
         String tmpPass;
         String tmpEmployee;
@@ -71,15 +74,26 @@ public class HomePage {
                 Cell userCell = row.getCell(0); // Get the Cell at the Index / Column you want.
                 Cell fNameCell = row.getCell(1); // Get the Cell at the Index / Column you want.
                 Cell lNameCell = row.getCell(2); // Get the Cell at the Index / Column you want.
+                Cell dateOfBirth = row.getCell(3); // Get the Cell at the Index / Column you want.
                 //Cell cardNumberCell = row.getCell(4); // Get the Cell at the Index / Column you want.
-                Cell passCell = row.getCell(6); // Get the Cell at the Index / Column you want.
-                Cell employeeCell = row.getCell(5); // Get the Cell at the Index / Column you want.
+                Cell passCell = row.getCell(5); // Get the Cell at the Index / Column you want.
+                Cell employeeCell = row.getCell(4); // Get the Cell at the Index / Column you want.
                 tmpUser = userCell.getStringCellValue(); // turns it into a string
                 tmpFName = fNameCell.getStringCellValue(); // turns it into a string
                 tmpLName = lNameCell.getStringCellValue(); // turns it into a string
                 //tmpCardNumber = cardNumberCell.getStringCellValue(); // turns it into a string
                 tmpPass = passCell.getStringCellValue(); // turns it into a string
                 tmpEmployee = employeeCell.getStringCellValue(); // turns it into a string
+
+                if (dateOfBirth.getCellType() == CellType.STRING) {
+                    tmpDateOfBirth = dateOfBirth.toString();
+                } else if (dateOfBirth.getCellType() == CellType.NUMERIC) {
+                    if (DateUtil.isCellDateFormatted(dateOfBirth)) {
+                        tmpDateOfBirth = dateOfBirth.getDateCellValue().toString();
+                    } else {
+                        System.out.println("welp all that went to waste");
+                    }
+                }
 
                 // checks if the username and password matches. Then it checks if the user is an employee
                 if (uName.equals(tmpUser) && pWord.equals(tmpPass) && tmpEmployee.equals("f")) {
@@ -90,6 +104,7 @@ public class HomePage {
                     App.usah = tmpUser;
                     App.efName = tmpFName;
                     App.elName = tmpLName;
+                    App.birth = tmpDateOfBirth;
                     //App.cardNumbah = tmpCardNumber;
                     break;
                 } else if (uName.equals(tmpUser) && pWord.equals(tmpPass) && tmpEmployee.equals("t")){

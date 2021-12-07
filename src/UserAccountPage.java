@@ -20,7 +20,7 @@ public class UserAccountPage {
 
     @FXML
     void goToAddTransactionPage(ActionEvent event) throws IOException {
-        m.changeScene("src/fxml_pages/customer_pages/AddTransactionPage.fxml");
+        m.changeScene("fxml_pages/customer_pages/AddTransactionPage.fxml");
     }
 
     @FXML
@@ -30,7 +30,7 @@ public class UserAccountPage {
 
     @FXML
     void goToUserInfoPage(ActionEvent event) throws IOException {
-        m.changeScene("src/fxml_pages/customer_pages/UserInfoPage.fxml");
+        m.changeScene("fxml_pages/customer_pages/UserInfoPage.fxml");
     }
 
     @FXML

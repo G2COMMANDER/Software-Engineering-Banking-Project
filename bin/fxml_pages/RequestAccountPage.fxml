@@ -29,6 +29,7 @@
       <TextField fx:id="firstName" layoutX="376.0" layoutY="201.0" promptText="First Name" AnchorPane.topAnchor="200.0" />
       <TextField fx:id="lastName" layoutX="376.0" layoutY="230.0" promptText="Last Name" AnchorPane.topAnchor="230.0" />
       <TextField fx:id="userName" layoutX="376.0" layoutY="260.0" promptText="User Name" AnchorPane.topAnchor="260.0" />
+      <TextField fx:id="doB" layoutX="376.0" layoutY="288.0" promptText="mm/dd/yyyy" AnchorPane.topAnchor="290.0" />
       <PasswordField fx:id="password" layoutX="376.0" layoutY="320.0" promptText="Password" AnchorPane.topAnchor="320.0" />
       <PasswordField fx:id="checkPassword" layoutX="376.0" layoutY="350.0" promptText="Re-enter Password" AnchorPane.topAnchor="350.0" />
       <Label layoutX="317.0" layoutY="205.0" text="First Name" textAlignment="RIGHT" translateX="-5.0">
@@ -37,6 +38,7 @@
          </opaqueInsets></Label>
       <Label layoutX="317.0" layoutY="235.0" text="Last Name" textAlignment="RIGHT" translateX="-5.0" />
       <Label layoutX="315.0" layoutY="265.0" text="User Name" textAlignment="RIGHT" translateX="-5.0" />
+      <Label layoutX="300.0" layoutY="294.0" text="Date of Birth" textAlignment="RIGHT" />
       <Label layoutX="323.0" layoutY="325.0" text="Password" textAlignment="RIGHT" translateX="-5.0" />
       <Label layoutX="273.0" layoutY="355.0" text="Re-enter Password" textAlignment="RIGHT" translateX="-5.0" />
       <Button alignment="CENTER" contentDisplay="CENTER" layoutX="376.0" layoutY="361.0" mnemonicParsing="false" onAction="#requestAccount" prefHeight="60.0" prefWidth="149.0" text="Request Account" textAlignment="CENTER" wrapText="true" AnchorPane.topAnchor="400.0">
@@ -44,7 +46,5 @@
             <Font size="14.0" />
          </font>
       </Button>
-      <TextField fx:id="doB" layoutX="376.0" layoutY="288.0" promptText="mm/dd/yyyy" AnchorPane.topAnchor="290.0" />
-      <Label layoutX="300.0" layoutY="294.0" text="Date of Birth" textAlignment="RIGHT" />
    </children>
 </AnchorPane>

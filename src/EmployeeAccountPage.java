@@ -7,6 +7,7 @@ public class EmployeeAccountPage {
 
     App m = new App();
 
+    // These are all buttons that redirect to the page they are referencing
     @FXML
     void goToAcceptDenyPage(ActionEvent event) throws IOException {
         m.changeScene("fxml_pages/employee_pages/UserListPage.fxml");

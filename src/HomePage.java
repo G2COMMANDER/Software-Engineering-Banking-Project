@@ -71,20 +71,26 @@ public class HomePage {
             // this checks the username and password
             for (Row row : sheet) { // For each Row.
                 
-                Cell userCell = row.getCell(0); // Get the Cell at the Index / Column you want.
-                Cell fNameCell = row.getCell(1); // Get the Cell at the Index / Column you want.
-                Cell lNameCell = row.getCell(2); // Get the Cell at the Index / Column you want.
-                Cell dateOfBirth = row.getCell(3); // Get the Cell at the Index / Column you want.
-                //Cell cardNumberCell = row.getCell(4); // Get the Cell at the Index / Column you want.
-                Cell passCell = row.getCell(5); // Get the Cell at the Index / Column you want.
+                // This gets the information from each column in a row and assigns them to a cell named after the column header
+                Cell userCell = row.getCell(0); // This gets the cell at the Username column
+                Cell fNameCell = row.getCell(1); // This gets the cell at the First Name column
+                Cell lNameCell = row.getCell(2); // This gets the cell at the Last Name column
+                Cell dateOfBirth = row.getCell(3); // This gets the cell at the Date of Birth column
+                //Cell cardNumberCell = row.getCell(4); // This gets the cell at the Card Number column. The card features were never implemented
+                Cell passCell = row.getCell(5); // This 
                 Cell employeeCell = row.getCell(4); // Get the Cell at the Index / Column you want.
-                tmpUser = userCell.getStringCellValue(); // turns it into a string
-                tmpFName = fNameCell.getStringCellValue(); // turns it into a string
-                tmpLName = lNameCell.getStringCellValue(); // turns it into a string
-                //tmpCardNumber = cardNumberCell.getStringCellValue(); // turns it into a string
-                tmpPass = passCell.getStringCellValue(); // turns it into a string
-                tmpEmployee = employeeCell.getStringCellValue(); // turns it into a string
 
+                // This turns all the data in the cells into a String type (using .getStringCellValue)
+                // so that it can be easily worked with in the .xlsx documents
+                tmpUser = userCell.getStringCellValue();
+                tmpFName = fNameCell.getStringCellValue(); 
+                tmpLName = lNameCell.getStringCellValue(); 
+                //tmpCardNumber = cardNumberCell.getStringCellValue(); // The card features were never implemented
+                tmpPass = passCell.getStringCellValue(); 
+                tmpEmployee = employeeCell.getStringCellValue(); 
+
+                // This reads the users Date of Birth cell and converts it from a Date format to a String format
+                // like the cells above
                 if (dateOfBirth.getCellType() == CellType.STRING) {
                     tmpDateOfBirth = dateOfBirth.toString();
                 } else if (dateOfBirth.getCellType() == CellType.NUMERIC) {
@@ -101,6 +107,7 @@ public class HomePage {
                     System.out.println(userCell.getColumnIndex() + " Found Username: " + userCell.getStringCellValue());
                     System.out.println(passCell.getColumnIndex() + " Found Password: " + passCell.getStringCellValue());
                     System.out.println(employeeCell.getColumnIndex() + " Employee Status: " + employeeCell.getStringCellValue());
+                    // This sets the global variables so that it can be used in other pages
                     App.usah = tmpUser;
                     App.efName = tmpFName;
                     App.elName = tmpLName;
@@ -130,12 +137,12 @@ public class HomePage {
     }
 
     @FXML
-    void goToRequestPage(ActionEvent event) throws IOException {
+    void goToRequestPage(ActionEvent event) throws IOException { // This is the action for the Request Account button
 
         m.changeScene("fxml_pages/RequestAccountPage.fxml");
     }
 
-    @FXML
+    @FXML // This action passes the username and password to "validate" functions to ensure proper login
     void goToUserAccountPage(ActionEvent event) throws IOException, NoSuchAlgorithmException {
 
         String uName = username.getText().toString();

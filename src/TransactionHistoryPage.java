@@ -47,7 +47,7 @@ public class TransactionHistoryPage {
         ExcelFile workbook = ExcelFile.load(file);
 
         ExcelWorksheet worksheet = workbook.getWorksheet(2);
-        String[][] sourceData = new String[50][4];
+        String[][] sourceData = new String[50][5];
         for (int row = 0; row < sourceData.length; row++) {
             for (int column = 0; column < sourceData[row].length; column++) {
                 ExcelCell cell = worksheet.getCell(row, column);
@@ -66,7 +66,7 @@ public class TransactionHistoryPage {
         ExcelFile workbook = ExcelFile.load(file);
 
         ExcelWorksheet worksheet = workbook.getWorksheet(1);
-        String[][] sourceData = new String[50][4];
+        String[][] sourceData = new String[50][5];
         for (int row = 0; row < sourceData.length; row++) {
             for (int column = 0; column < sourceData[row].length; column++) {
                 ExcelCell cell = worksheet.getCell(row, column);

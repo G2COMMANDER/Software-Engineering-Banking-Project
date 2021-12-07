@@ -25,6 +25,8 @@ public class RequestAccountPage {
     @FXML
     private TextField lastName;
     @FXML
+    private TextField doB;
+    @FXML
     private PasswordField password;
     @FXML
     private PasswordField checkPassword;
@@ -52,13 +54,12 @@ public class RequestAccountPage {
         return hexString.toString();
     }
 
-    private int checkRequestedAccount(String uNameC, String fNameC, String lNameC, String passC, String checkPassC) {
+    private int checkRequestedAccount(String uNameC, String fNameC, String lNameC, String doBC, String passC, String checkPassC) {
         
         int checkReqAcc = 0;
         String tmpUName;
         String tmpFName;
         String tmpLName;
-        String tmpDOB = "test";
 
         try {
 
@@ -112,7 +113,7 @@ public class RequestAccountPage {
                 XSSFSheet sheet = workbook.getSheetAt(1);
 
                 Object[][] inputdata = {
-                    {uNameC, fNameC, lNameC, tmpDOB},
+                    {uNameC, fNameC, lNameC, doBC, passC},
                 };
     
                 int rowCount = sheet.getLastRowNum();
@@ -156,10 +157,11 @@ public class RequestAccountPage {
         String uName = userName.getText().toString();
         String fName = firstName.getText().toString();
         String lName = lastName.getText().toString();
+        String doBStr = doB.getText().toString(); 
         String pass = password.getText().toString();
         String checkPass = checkPassword.getText().toString();
 
-        int test = checkRequestedAccount(uName, fName, lName, pass, checkPass);
+        int test = checkRequestedAccount(uName, fName, lName, doBStr, pass, checkPass);
 
         switch (test) {
             case 0: System.out.println("Account created successfully!");

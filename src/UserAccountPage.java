@@ -14,8 +14,8 @@ public class UserAccountPage {
     private Label name;
 
     @FXML
-    void goToTransactHistoryPage(ActionEvent event) {
-        //m.changeScene("fxml_pages/customer_pages/TransactionHistoryPage.fxml");
+    void goToTransactHistoryPage(ActionEvent event) throws IOException {
+        m.changeScene("fxml_pages/customer_pages/TransactionHistoryPage.fxml");
     }
 
     @FXML

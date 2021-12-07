@@ -1,8 +1,12 @@
+import java.io.IOException;
+
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.TableView;
 
 public class TransactionHistoryPage {
+
+    App m = new App();
 
     @FXML
     private TableView<?> table;
@@ -18,8 +22,8 @@ public class TransactionHistoryPage {
     }
 
     @FXML
-    void exitPage(ActionEvent event) {
-
+    void exitPage(ActionEvent event) throws IOException {
+        m.changeScene("fxml_pages/customer_pages/UserAccountPage.fxml");
     }
 
 }

@@ -8,7 +8,7 @@
 
 <AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="900.0" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="TransactionHistoryPage">
     <children>
-        <TableView fx:id="table" editable="true" layoutX="193.0" layoutY="79.0" prefHeight="413.0" prefWidth="515.0">
+        <TableView fx:id="table" layoutX="193.0" layoutY="79.0" prefHeight="413.0" prefWidth="515.0">
         </TableView>
         <Button alignment="CENTER" contentDisplay="CENTER" layoutX="26.0" layoutY="561.0" mnemonicParsing="false" onAction="#displayWithdrawls" text="Display Withdrawls" textAlignment="CENTER" AnchorPane.leftAnchor="26.0" />
         <Button layoutX="161.0" layoutY="561.0" mnemonicParsing="false" onAction="#displayDeposits" text="Display Deposits" AnchorPane.leftAnchor="161.0" />

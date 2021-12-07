@@ -13,12 +13,15 @@ public class UserInfoPage {
     private Label lNameLabel;
     @FXML
     private Label uNameLabel;
+    @FXML
+    private Label doBLabel;
 
     @FXML
     void refreshPage(ActionEvent event) {
         fNameLabel.setText(App.efName);
         lNameLabel.setText(App.elName);
         uNameLabel.setText(App.usah);
+        doBLabel.setText(App.birth);
     }
     
     @FXML

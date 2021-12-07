@@ -30,7 +30,12 @@
          <font>
             <Font size="20.0" />
          </font></Label>
-      <Label fx:id="fNameLabel" layoutX="459.0" layoutY="225.0" AnchorPane.leftAnchor="460.0">
+      <Label layoutX="460.0" layoutY="340.0" text="Date of Birth:" AnchorPane.rightAnchor="455.0" AnchorPane.topAnchor="340.0">
+         <font>
+            <Font size="20.0" />
+         </font>
+      </Label>
+      <Label fx:id="fNameLabel" layoutX="460.0" layoutY="225.0" AnchorPane.leftAnchor="460.0">
          <font>
             <Font size="20.0" />
          </font>
@@ -40,7 +45,12 @@
             <Font size="20.0" />
          </font>
       </Label>
-      <Label fx:id="uNameLabel" layoutX="458.0" layoutY="305.0" AnchorPane.leftAnchor="460.0">
+      <Label fx:id="uNameLabel" layoutX="460.0" layoutY="305.0" AnchorPane.leftAnchor="460.0">
+         <font>
+            <Font size="20.0" />
+         </font>
+      </Label>
+      <Label fx:id="doBLabel" layoutX="460.0" layoutY="340.0" AnchorPane.leftAnchor="460.0" AnchorPane.topAnchor="340.0">
          <font>
             <Font size="20.0" />
          </font>

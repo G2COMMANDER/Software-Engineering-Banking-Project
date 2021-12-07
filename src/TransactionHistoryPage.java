@@ -6,8 +6,8 @@ import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.*;
 import javafx.scene.control.cell.TextFieldTableCell;
-import javafx.stage.FileChooser;
 import java.io.File;
+import java.io.FileInputStream;
 import java.io.IOException;
 
 public class TransactionHistoryPage {
@@ -16,25 +16,6 @@ public class TransactionHistoryPage {
 
     @FXML
     private TableView table;
-
-    @FXML
-    void displayDeposits(ActionEvent event) throws IOException {
-        FileChooser fileChooser = new FileChooser();
-        fileChooser.setTitle("Open file");
-        File file = fileChooser.showOpenDialog(table.getScene().getWindow());
-
-        ExcelFile workbook = ExcelFile.load(file.getAbsolutePath());
-        ExcelWorksheet worksheet = workbook.getWorksheet(0);
-        String[][] sourceData = new String[100][26];
-        for (int row = 0; row < sourceData.length; row++) {
-            for (int column = 0; column < sourceData[row].length; column++) {
-                ExcelCell cell = worksheet.getCell(row, column);
-                if (cell.getValueType() != CellValueType.NULL)
-                    sourceData[row][column] = cell.getValue().toString();
-            }
-        }
-        fillTable(sourceData);
-    }
 
     private void fillTable(String[][] dataSource) {
         table.getColumns().clear();
@@ -57,10 +38,43 @@ public class TransactionHistoryPage {
             table.getColumns().add(column);
         }
     }
-    
-    @FXML
-    void displayWithdrawls(ActionEvent event) {
 
+    @FXML
+    void displayDeposits(ActionEvent event) throws IOException {
+
+        FileInputStream file = new FileInputStream(new File("src/Database/UserInformation/" + App.usah + ".xlsx"));
+
+        ExcelFile workbook = ExcelFile.load(file);
+
+        ExcelWorksheet worksheet = workbook.getWorksheet(2);
+        String[][] sourceData = new String[50][4];
+        for (int row = 0; row < sourceData.length; row++) {
+            for (int column = 0; column < sourceData[row].length; column++) {
+                ExcelCell cell = worksheet.getCell(row, column);
+                if (cell.getValueType() != CellValueType.NULL)
+                    sourceData[row][column] = cell.getValue().toString();
+            }
+        }
+        fillTable(sourceData);
+    }
+
+    @FXML
+    void displayWithdrawls(ActionEvent event) throws IOException {
+
+        FileInputStream file = new FileInputStream(new File("src/Database/UserInformation/" + App.usah + ".xlsx"));
+
+        ExcelFile workbook = ExcelFile.load(file);
+
+        ExcelWorksheet worksheet = workbook.getWorksheet(1);
+        String[][] sourceData = new String[50][4];
+        for (int row = 0; row < sourceData.length; row++) {
+            for (int column = 0; column < sourceData[row].length; column++) {
+                ExcelCell cell = worksheet.getCell(row, column);
+                if (cell.getValueType() != CellValueType.NULL)
+                    sourceData[row][column] = cell.getValue().toString();
+            }
+        }
+        fillTable(sourceData);
     }
 
     @FXML

@@ -2,14 +2,11 @@ import java.io.IOException;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.Label;
-import javafx.scene.input.KeyEvent;
 
 public class UserInfoPage {
 
     App m = new App();
 
-    @FXML
-    private Label cardNumberLabel;
     @FXML
     private Label fNameLabel;
     @FXML
@@ -18,8 +15,7 @@ public class UserInfoPage {
     private Label uNameLabel;
 
     @FXML
-    void refreshPage(KeyEvent event) {
-        cardNumberLabel.setText(App.cardNumbah);
+    void refreshPage(ActionEvent event) {
         fNameLabel.setText(App.efName);
         lNameLabel.setText(App.elName);
         uNameLabel.setText(App.usah);

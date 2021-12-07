@@ -15,7 +15,7 @@ public class App extends Application{
     static String usah;
     static String efName;
     static String elName;
-    static String cardNumbah;
+    static String birth;
     static String balanceAmountuh;
 
     private static Stage stage;

@@ -58,6 +58,7 @@
         "src/Apache_POI_Dependencies/auxiliary/xml-apis-1.4.01.jar",
         "src/Apache_POI_Dependencies/auxiliary/xml-apis-ext-1.3.04.jar",
         "src/Apache_POI_Dependencies/auxiliary/xmlgraphics-commons-2.6.jar",
-        "src/Apache_POI_Dependencies/auxiliary/xmlsec-2.2.3.jar"
+        "src/Apache_POI_Dependencies/auxiliary/xmlsec-2.2.3.jar",
+        "src/Gembox_Dependencies/gembox-spreadsheet.jar"
     ]
 }

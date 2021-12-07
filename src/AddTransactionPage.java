@@ -136,7 +136,7 @@ public class AddTransactionPage {
 
     @FXML
     void returnToHome(ActionEvent event) throws IOException {
-        m.changeScene("src/fxml_pages/customer_pages/UserAccountPage.fxml");
+        m.changeScene("fxml_pages/customer_pages/UserAccountPage.fxml");
     }
 
 }

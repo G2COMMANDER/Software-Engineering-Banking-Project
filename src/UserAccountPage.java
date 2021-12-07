@@ -15,7 +15,7 @@ public class UserAccountPage {
 
     @FXML
     void goToTransactHistoryPage(ActionEvent event) {
-        //m.changeScene("src/fxml_pages/customer_pages/TransactionHistoryPage.fxml");
+        //m.changeScene("fxml_pages/customer_pages/TransactionHistoryPage.fxml");
     }
 
     @FXML
@@ -25,7 +25,7 @@ public class UserAccountPage {
 
     @FXML
     void goToTransferMoneyPage(ActionEvent event) {
-        //m.changeScene("src/fxml_pages/customer_pages/TransferMoneyPage.fxml");
+        //m.changeScene("fxml_pages/customer_pages/TransferMoneyPage.fxml");
     }
 
     @FXML

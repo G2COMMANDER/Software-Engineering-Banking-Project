@@ -10,7 +10,7 @@
     <children>
         <TableView fx:id="table" editable="true" layoutX="193.0" layoutY="123.0" prefHeight="413.0" prefWidth="515.0">
         </TableView>
-        <Button alignment="CENTER" contentDisplay="CENTER" layoutX="26.0" layoutY="561.0" mnemonicParsing="false" onAction="#loadRequests" text="Load Requests" textAlignment="CENTER" AnchorPane.leftAnchor="26.0" />
+        <Button alignment="CENTER" contentDisplay="CENTER" layoutX="26.0" layoutY="561.0" mnemonicParsing="false" onAction="#loadRequests" text="Load Users" textAlignment="CENTER" AnchorPane.leftAnchor="26.0" />
         <Button alignment="CENTER" contentDisplay="CENTER" layoutX="161.0" layoutY="561.0" mnemonicParsing="false" onAction="#saveChanges" text="Save Changes" textAlignment="CENTER" AnchorPane.leftAnchor="161.0" />
       <Button alignment="CENTER" contentDisplay="CENTER" layoutX="772.0" layoutY="561.0" mnemonicParsing="false" onAction="#exitPage" prefHeight="25.0" prefWidth="104.0" text="Exit" textAlignment="CENTER" AnchorPane.rightAnchor="24.0" />
       <Label alignment="CENTER" contentDisplay="CENTER" layoutY="17.0" text="View/Delete Accounts" textAlignment="CENTER" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="15.0">

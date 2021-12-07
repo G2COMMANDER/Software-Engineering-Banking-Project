@@ -5,24 +5,29 @@
 <?import javafx.scene.control.TextArea?>
 <?import javafx.scene.control.TextField?>
 <?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.shape.Rectangle?>
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
 <AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" onKeyPressed="#refreshPage" prefHeight="600.0" prefWidth="900.0" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="AddTransactionPage">
    <children>
-      <Label alignment="CENTER" contentDisplay="CENTER" layoutX="244.0" layoutY="46.0" prefHeight="35.0" prefWidth="413.0" text="Add Transaction Page" textAlignment="CENTER" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0">
+      <Rectangle fill="#80bfff" height="80.0" stroke="TRANSPARENT" strokeType="INSIDE" width="900.0" />
+      <Button alignment="CENTER" contentDisplay="CENTER" layoutX="15.0" layoutY="15.0" mnemonicParsing="false" onAction="#returnToHome" prefHeight="50.0" prefWidth="90.0" text="Return to Home Page" textAlignment="CENTER" wrapText="true">
          <font>
-            <Font size="24.0" />
+            <Font name="System Bold" size="12.0" />
+         </font></Button>
+      <Label alignment="CENTER" contentDisplay="CENTER" layoutX="244.0" layoutY="80.0" prefHeight="35.0" prefWidth="413.0" text="Add Transaction Page" textAlignment="CENTER" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0">
+         <font>
+            <Font name="System Bold" size="24.0" />
          </font>
       </Label>
-      <Label fx:id="balanceAmount" alignment="CENTER" layoutY="154.0" text="&quot;insert account balance amount here&quot;" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="100.0">
+      <Label fx:id="balanceAmount" alignment="CENTER" text="&quot;insert account balance amount here&quot;" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="115.0">
          <font>
             <Font size="20.0" />
          </font>
       </Label>
-      <Button alignment="CENTER" contentDisplay="CENTER" layoutX="406.0" layoutY="501.0" mnemonicParsing="false" onAction="#returnToHome" prefHeight="50.0" prefWidth="90.0" text="Return to Home Page" textAlignment="CENTER" wrapText="true" AnchorPane.topAnchor="500.0" />
       <TextField fx:id="Amount" cacheShape="false" layoutX="376.0" layoutY="184.0" prefHeight="25.0" prefWidth="150.0" promptText="Enter Amount" AnchorPane.topAnchor="180.0" />
-      <TextField fx:id="Time" cacheShape="false" layoutX="376.0" layoutY="222.0" prefHeight="25.0" prefWidth="150.0" promptText="mm:hh" AnchorPane.topAnchor="215.0" />
+      <TextField fx:id="Time" cacheShape="false" layoutX="376.0" layoutY="222.0" prefHeight="25.0" prefWidth="150.0" promptText="Military Time" AnchorPane.topAnchor="215.0" />
       <TextField fx:id="Date" cacheShape="false" layoutX="376.0" layoutY="253.0" prefHeight="25.0" prefWidth="150.0" promptText="mm/dd/yyyy" AnchorPane.topAnchor="250.0" />
       <TextField fx:id="Location" cacheShape="false" layoutX="376.0" layoutY="322.0" prefHeight="25.0" prefWidth="150.0" promptText="Enter Location" AnchorPane.topAnchor="285.0" />
       <TextArea fx:id="Comments" layoutX="376.0" layoutY="371.0" prefHeight="100.0" prefWidth="150.0" text="N/A" wrapText="true" AnchorPane.topAnchor="371.0" />

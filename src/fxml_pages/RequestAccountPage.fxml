@@ -1,39 +1,45 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import javafx.scene.control.Button?>
-<?import javafx.scene.control.Label?>
-<?import javafx.scene.control.PasswordField?>
-<?import javafx.scene.control.TextField?>
-<?import javafx.scene.layout.AnchorPane?>
-<?import javafx.scene.text.Font?>
+<?import javafx.geometry.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.shape.*?>
+<?import javafx.scene.text.*?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="900.0" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="RequestAccountPage">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="900.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="RequestAccountPage">
    <children>
-      <Label alignment="CENTER" layoutX="436.0" layoutY="81.0" prefWidth="900.0" text="Welcome to the Request Account Page" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0">
+      <Rectangle fill="#73e5ac" height="80.0" stroke="TRANSPARENT" strokeType="INSIDE" width="900.0" />
+      <Button alignment="CENTER" contentDisplay="CENTER" layoutX="15.0" layoutY="15.0" mnemonicParsing="false" onAction="#returnHome" prefHeight="50.0" prefWidth="90.0" text="Return To Log In" textAlignment="CENTER" wrapText="true">
          <font>
-            <Font size="24.0" />
+            <Font name="System Bold" size="12.0" />
+         </font></Button>
+      <Label alignment="CENTER" layoutX="436.0" layoutY="81.0" prefWidth="900.0" text="Welcome to the Account Request Page" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0">
+         <font>
+            <Font name="System Bold" size="24.0" />
          </font>
       </Label>
-      <Label layoutX="320.0" layoutY="116.0" text="Please Enter your information">
+      <Label layoutX="320.0" layoutY="116.0" text="Please enter your information">
          <font>
             <Font size="20.0" />
          </font>
       </Label>
-      <TextField fx:id="firstName" layoutX="344.0" layoutY="200.0" promptText="First Name" AnchorPane.topAnchor="200.0" />
-      <TextField fx:id="lastName" layoutX="344.0" layoutY="230.0" promptText="Last Name" AnchorPane.topAnchor="230.0" />
-      <TextField fx:id="userName" layoutX="344.0" layoutY="260.0" promptText="User Name" AnchorPane.topAnchor="260.0" />
-      <PasswordField fx:id="password" layoutX="344.0" layoutY="290.0" promptText="Password" AnchorPane.topAnchor="290.0" />
-      <PasswordField fx:id="checkPassword" layoutX="344.0" layoutY="320.0" promptText="Re-enter Password" AnchorPane.topAnchor="320.0" />
-      <Label layoutX="286.0" layoutY="203.0" text="First Name" />
-      <Label layoutX="286.0" layoutY="233.0" text="Last Name" />
-      <Label layoutX="284.0" layoutY="263.0" text="User Name" />
-      <Label layoutX="292.0" layoutY="293.0" text="Password" />
-      <Label layoutX="242.0" layoutY="323.0" text="Re-enter Password" />
-      <Button alignment="CENTER" contentDisplay="CENTER" layoutX="344.0" layoutY="360.0" mnemonicParsing="false" onAction="#requestAccount" prefHeight="60.0" prefWidth="149.0" text="Request Account" textAlignment="CENTER" wrapText="true">
+      <TextField fx:id="firstName" layoutX="376.0" layoutY="201.0" promptText="First Name" AnchorPane.topAnchor="201.0" />
+      <TextField fx:id="lastName" layoutX="376.0" layoutY="231.0" promptText="Last Name" AnchorPane.topAnchor="231.0" />
+      <TextField fx:id="userName" layoutX="376.0" layoutY="261.0" promptText="User Name" AnchorPane.topAnchor="261.0" />
+      <PasswordField fx:id="password" layoutX="376.0" layoutY="291.0" promptText="Password" AnchorPane.topAnchor="291.0" />
+      <PasswordField fx:id="checkPassword" layoutX="376.0" layoutY="321.0" promptText="Re-enter Password" AnchorPane.topAnchor="321.0" />
+      <Label layoutX="317.0" layoutY="205.0" text="First Name" textAlignment="RIGHT" translateX="-5.0">
+         <opaqueInsets>
+            <Insets />
+         </opaqueInsets></Label>
+      <Label layoutX="317.0" layoutY="235.0" text="Last Name" textAlignment="RIGHT" translateX="-5.0" />
+      <Label layoutX="315.0" layoutY="265.0" text="User Name" textAlignment="RIGHT" translateX="-5.0" />
+      <Label layoutX="323.0" layoutY="295.0" text="Password" textAlignment="RIGHT" translateX="-5.0" />
+      <Label layoutX="273.0" layoutY="325.0" text="Re-enter Password" textAlignment="RIGHT" translateX="-5.0" />
+      <Button alignment="CENTER" contentDisplay="CENTER" layoutX="376.0" layoutY="361.0" mnemonicParsing="false" onAction="#requestAccount" prefHeight="60.0" prefWidth="149.0" text="Request Account" textAlignment="CENTER" wrapText="true">
          <font>
             <Font size="14.0" />
          </font>
       </Button>
-      <Button alignment="CENTER" contentDisplay="CENTER" layoutX="374.0" layoutY="448.0" mnemonicParsing="false" onAction="#returnHome" prefHeight="50.0" prefWidth="90.0" text="Return To Home Page" textAlignment="CENTER" wrapText="true" />
    </children>
 </AnchorPane>

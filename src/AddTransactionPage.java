@@ -36,6 +36,7 @@ public class AddTransactionPage {
         String nTime = Time.getText().toString();
         String nDate = Date.getText().toString();
         String nLocation = Location.getText().toString();
+        String nComment = Comments.getText().toString();
 
         String userDatabaseFile = ("src/Database/UserInformation/" + App.usah + ".xlsx");
 
@@ -46,7 +47,7 @@ public class AddTransactionPage {
             XSSFSheet sheet = workbook.getSheetAt(nSheet);
 
             Object[][] inputdata = {
-                {nAmount, nTime, nDate, nLocation},
+                {nAmount, nTime, nDate, nLocation, nComment},
             };
 
             int rowCount = sheet.getLastRowNum();

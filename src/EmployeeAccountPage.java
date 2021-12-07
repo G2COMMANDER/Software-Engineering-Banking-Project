@@ -6,19 +6,16 @@ import javafx.scene.control.Label;
 
 public class EmployeeAccountPage {
 
-    @FXML
-    private Label name;
-
     App m = new App();
 
     @FXML
-    void goToAcceptDenyPage(ActionEvent event) {
+    void goToAcceptDenyPage(ActionEvent event) throws IOException {
 
     }
 
     @FXML
-    void goToDeleteAccountsPage(ActionEvent event) {
-
+    void goToDeleteAccountsPage(ActionEvent event) throws IOException {
+        m.changeScene("fxml_pages/employee_pages/ViewDelAccountsPage.fxml");
     }
 
     @FXML

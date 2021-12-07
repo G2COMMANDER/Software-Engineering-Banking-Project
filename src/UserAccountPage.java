@@ -9,8 +9,6 @@ public class UserAccountPage {
     App m = new App();
 
     @FXML
-    private Label balanceAmount;
-    @FXML
     private Label name;
 
     @FXML

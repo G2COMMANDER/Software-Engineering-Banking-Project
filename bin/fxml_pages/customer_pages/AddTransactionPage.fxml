@@ -21,11 +21,6 @@
             <Font name="System Bold" size="24.0" />
          </font>
       </Label>
-      <Label fx:id="balanceAmount" alignment="CENTER" text="&quot;insert account balance amount here&quot;" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="115.0">
-         <font>
-            <Font size="20.0" />
-         </font>
-      </Label>
       <TextField fx:id="Amount" cacheShape="false" layoutX="376.0" layoutY="184.0" prefHeight="25.0" prefWidth="150.0" promptText="Enter Amount" AnchorPane.topAnchor="180.0" />
       <TextField fx:id="Time" cacheShape="false" layoutX="376.0" layoutY="222.0" prefHeight="25.0" prefWidth="150.0" promptText="Military Time" AnchorPane.topAnchor="215.0" />
       <TextField fx:id="Date" cacheShape="false" layoutX="376.0" layoutY="253.0" prefHeight="25.0" prefWidth="150.0" promptText="mm/dd/yyyy" AnchorPane.topAnchor="250.0" />

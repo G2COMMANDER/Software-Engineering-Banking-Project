@@ -8,7 +8,6 @@ import org.apache.poi.xssf.usermodel.XSSFSheet;
 import org.apache.poi.xssf.usermodel.XSSFWorkbook;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
-import javafx.scene.control.Label;
 import javafx.scene.control.TextArea;
 import javafx.scene.control.TextField;
 import javafx.scene.input.KeyEvent;
@@ -27,8 +26,6 @@ public class AddTransactionPage {
     private TextField Location;
     @FXML
     private TextField Time;
-    @FXML
-    private Label balanceAmount;
 
     private void writeToExcel(int nSheet) {
 

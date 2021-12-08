@@ -21,16 +21,6 @@ public class App extends Application{
     static String birth; // This is shorthand for DoB (Date of Birth)
     static String balanceAmountuh; // This is shorthand for balanceAmount (Balance Amount)
 
-    /*
-    static boolean checkIfBlank(String... values) {
-
-        for (String s : values) {
-            if (s.)
-        }
-    }
-    */
-    
-
     // This sets the stage for the JavaFX program to run on
     private static Stage stage;
     @Override

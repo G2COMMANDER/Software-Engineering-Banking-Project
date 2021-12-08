@@ -6,6 +6,8 @@ import java.math.BigInteger;
 import java.nio.charset.StandardCharsets;
 import java.security.MessageDigest;
 import java.security.NoSuchAlgorithmException;
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
 
 import org.apache.poi.ss.usermodel.Cell;
 import org.apache.poi.ss.usermodel.Row;
@@ -54,7 +56,8 @@ public class RequestAccountPage {
         return hexString.toString();
     }
 
-    private int checkRequestedAccount(String uNameC, String fNameC, String lNameC, String doBC, String passC, String checkPassC) {
+    private void checkRequestedAccount(String uNameC, String fNameC, String lNameC, String doBC, String passC, String checkPassC) {
+        
         
         int checkReqAcc = 0;
         String tmpUName;
@@ -62,6 +65,25 @@ public class RequestAccountPage {
         String tmpLName;
 
         try {
+
+            if ((uNameC.isBlank() || uNameC.isEmpty()) || (fNameC.isBlank() || fNameC.isEmpty()) || (lNameC.isBlank() || lNameC.isEmpty()) || (doBC.isBlank() || doBC.isEmpty()) || (passC.isBlank() || passC.isEmpty()) || (checkPassC.isBlank() || checkPassC.isEmpty())) {
+                checkReqAcc = 4;
+                throw new Exception();
+            }
+
+            if(uNameC.matches(".*\\d.*") || fNameC.matches(".*\\d.*") || lNameC.matches(".*\\d.*")) {
+                checkReqAcc = 5;
+                throw new Exception();
+            }
+
+            if (uNameC.contains(" ")){
+                checkReqAcc = 6;
+                throw new Exception();
+            }
+            if (passC.contains(" ") || checkPassC.contains(" ")) {
+                checkReqAcc = 7;
+                throw new Exception();
+            }
 
             FileInputStream file = new FileInputStream(new File("src/Database/Database.xlsx"));
 
@@ -90,7 +112,6 @@ public class RequestAccountPage {
 
                     if (fNameC.equals(tmpFName) && lNameC.equals(tmpLName)) { // checks is first and last name exist
                         checkReqAcc = 1;
-                        System.out.println("The user \"" + fNameCell.getStringCellValue() + " " + lNameCell.getStringCellValue() + "\" already exists");
                         break;
                     } else if (uNameC.equals(tmpUName)) { // checks if the username already exists
                         checkReqAcc = 2;
@@ -145,25 +166,10 @@ public class RequestAccountPage {
             workbook.close();
 
         } catch (Exception e) {
-            System.out.println("Big error, please try again");
+            System.out.println("\n");
         }
-        
-        return checkReqAcc;
-    }
-    
-    @FXML
-    void requestAccount(ActionEvent event) throws IOException {
 
-        String uName = userName.getText().toString();
-        String fName = firstName.getText().toString();
-        String lName = lastName.getText().toString();
-        String doBStr = doB.getText().toString(); 
-        String pass = password.getText().toString();
-        String checkPass = checkPassword.getText().toString();
-
-        int test = checkRequestedAccount(uName, fName, lName, doBStr, pass, checkPass);
-
-        switch (test) {
+        switch (checkReqAcc) {
             case 0: System.out.println("Account created successfully!");
                     break;
             case 1: System.out.println("Add the first/last name scenebuilder thing here");
@@ -172,8 +178,31 @@ public class RequestAccountPage {
                     break;
             case 3: System.out.println("Add scenebuilder password thing here");
                     break;
+            case 4: System.out.println("One or more fields are blank/empty, please try again");
+                    break;
+            case 5: System.out.println("Do not enter numbers in Username, First Name, or Last Name.\nPlease try again");
+                    break;
+            case 6: System.out.println("Do not enter spaces into the username, please try again");
+                    break;
+            case 7: System.out.println("Do not enter spaces into password, please try again");
+                    break;
             default: break;
         }
+    }
+    
+    @FXML
+    void requestAccount(ActionEvent event) throws IOException {
+
+
+        String uName = userName.getText().toString();
+        String fName = firstName.getText().toString();
+        String lName = lastName.getText().toString();
+        String doBStr = doB.getText().toString(); 
+        String pass = password.getText().toString();
+        String checkPass = checkPassword.getText().toString();        
+
+        checkRequestedAccount(uName, fName, lName, doBStr, pass, checkPass);
+
     }
 
     @FXML

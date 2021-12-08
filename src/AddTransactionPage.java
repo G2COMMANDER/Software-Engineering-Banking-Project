@@ -39,11 +39,28 @@ public class AddTransactionPage {
         String nLocation = Location.getText().toString();
         String nComment = Comments.getText().toString();
 
+        if (nComment.isBlank() || nComment.isEmpty()) {
+            nComment = "N/A";
+        }
+        
+
+
         // This is basically concactinating the pathname using the current user's username that
         // was obtained from HomePage
         String userDatabaseFile = ("src/Database/UserInformation/" + App.usah + ".xlsx");
 
         try{
+
+            // This checks if any TextField is left empty
+            if ((nAmount.isBlank() || nAmount.isEmpty()) || (nTime.isBlank() || nTime.isEmpty()) || (nDate.isBlank() || nDate.isEmpty()) || (nLocation.isBlank() || nLocation.isEmpty())) {
+                nSheet = 3;
+                throw new Exception();
+            }
+
+            if (nLocation.matches(".*\\d.*")) {
+                nSheet = 4;
+                throw new Exception();
+            }
 
             // This loads and sets up the Excel file using the Apache POU library
             // so that it can be manipulated with code
@@ -88,7 +105,7 @@ public class AddTransactionPage {
             fileOutput.close();
 
         } catch (Exception e) {
-            System.out.print("Try again");
+            System.out.println("Input Error:\n");;
         }
         // This is a placeholder for a feature that would've outputted this text onto a label
         // in the application, but is instead outputting it to the console for now
@@ -96,6 +113,10 @@ public class AddTransactionPage {
             case 1: System.out.println("Withdraw data successfully written.");
                     break;
             case 2: System.out.println("Deposit data successfully written.");
+                    break;
+            case 3: System.out.println("One or more fields are blank/empty, please try again");
+                    break;
+            case 4: System.out.println("Do not enter numbers in Location, please try again");
                     break;
             default: break;
         }

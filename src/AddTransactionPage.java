@@ -88,7 +88,7 @@ public class AddTransactionPage {
             fileOutput.close();
 
         } catch (Exception e) {
-            System.out.print("Try again lmao");
+            System.out.print("Try again");
         }
         // This is a placeholder for a feature that would've outputted this text onto a label
         // in the application, but is instead outputting it to the console for now

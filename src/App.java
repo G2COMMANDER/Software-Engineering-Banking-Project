@@ -1,6 +1,7 @@
 import java.io.IOException;
 import com.gembox.spreadsheet.*;
 import javafx.application.Application;
+import javafx.beans.binding.When.BooleanConditionBuilder;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
@@ -19,6 +20,16 @@ public class App extends Application{
     static String elName; // This is shorhand for lName (Last Name)
     static String birth; // This is shorthand for DoB (Date of Birth)
     static String balanceAmountuh; // This is shorthand for balanceAmount (Balance Amount)
+
+    /*
+    static boolean checkIfBlank(String... values) {
+
+        for (String s : values) {
+            if (s.)
+        }
+    }
+    */
+    
 
     // This sets the stage for the JavaFX program to run on
     private static Stage stage;

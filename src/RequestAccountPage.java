@@ -145,7 +145,7 @@ public class RequestAccountPage {
             workbook.close();
 
         } catch (Exception e) {
-            System.out.println("Something broke lol?");
+            System.out.println("Big error, please try again");
         }
         
         return checkReqAcc;

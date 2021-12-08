@@ -97,7 +97,7 @@ public class HomePage {
                     if (DateUtil.isCellDateFormatted(dateOfBirth)) {
                         tmpDateOfBirth = dateOfBirth.getDateCellValue().toString();
                     } else {
-                        System.out.println("welp all that went to waste");
+                        System.out.println("Cell type error, please try again");
                     }
                 }
 

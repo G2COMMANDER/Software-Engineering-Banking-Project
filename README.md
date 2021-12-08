@@ -53,8 +53,8 @@ Open the folder as a project in your IDE of choice (preferably IntelliJ)
 When you have the folder open in your IDE of choice, the first thing you want to do is add the dependencies.
 
 I will, however, only give links for the two preferred IDEs:
-[How to add Dependencies in VSCode](https://code.visualstudio.com/docs/java/java-project#_manage-dependencies-for-unmanaged-folder)
-[How to add Dependencies in IntelliJ IDEA](https://www.jetbrains.com/help/idea/working-with-module-dependencies.html)
+- [How to add Dependencies in VSCode](https://code.visualstudio.com/docs/java/java-project#_manage-dependencies-for-unmanaged-folder)
+- [How to add Dependencies in IntelliJ IDEA](https://www.jetbrains.com/help/idea/working-with-module-dependencies.html)
 
 There are plenty of guides, forums, and videos to follow for other IDE's, so do not worry if yours isn't listed here.
 

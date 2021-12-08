@@ -15,6 +15,8 @@ public class TransactionHistoryPage {
     App m = new App();
 
     @FXML
+    private Label currentlyViewing;
+    @FXML
     private TableView table;
 
     private void fillTable(String[][] dataSource) {
@@ -56,10 +58,11 @@ public class TransactionHistoryPage {
             }
         }
         fillTable(sourceData);
+        currentlyViewing.setText("You are currently viewing Deposits");
     }
 
     @FXML
-    void displayWithdrawls(ActionEvent event) throws IOException {
+    void displayWithdrawals(ActionEvent event) throws IOException {
 
         FileInputStream file = new FileInputStream(new File("src/Database/UserInformation/" + App.usah + ".xlsx"));
 
@@ -75,6 +78,7 @@ public class TransactionHistoryPage {
             }
         }
         fillTable(sourceData);
+        currentlyViewing.setText("You are currently viewing Withdrawals");
     }
 
     @FXML

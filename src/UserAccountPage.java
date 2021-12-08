@@ -2,14 +2,12 @@ import java.io.IOException;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.Label;
-import javafx.scene.input.KeyEvent;
+
 
 public class UserAccountPage {
 
     App m = new App();
 
-    @FXML
-    private Label balanceAmount;
     @FXML
     private Label name;
 
@@ -38,9 +36,7 @@ public class UserAccountPage {
         m.changeScene("fxml_pages/HomePage.fxml");
     }
 
-    @FXML
-    void refreshPage(KeyEvent event) {
+    public void initialize() {
         name.setText(App.efName + " " + App.elName);
     }
-
 }

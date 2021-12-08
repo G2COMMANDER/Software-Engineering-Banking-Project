@@ -1,6 +1,7 @@
 import java.io.IOException;
 import com.gembox.spreadsheet.*;
 import javafx.application.Application;
+import javafx.beans.binding.When.BooleanConditionBuilder;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
@@ -9,15 +10,18 @@ import javafx.stage.Stage;
 public class App extends Application{
 
     static {
+        //this is necesarry for the Gembox dependencies to work
         SpreadsheetInfo.setLicense("FREE-LIMITED-KEY");
     }
 
-    static String usah;
-    static String efName;
-    static String elName;
-    static String cardNumbah;
-    static String balanceAmountuh;
+    // These are global variables so that the User experience is more interactive
+    static String usah; // This is shorthand for username
+    static String efName; // This is shorthand for fName (First Name)
+    static String elName; // This is shorhand for lName (Last Name)
+    static String birth; // This is shorthand for DoB (Date of Birth)
+    static String balanceAmountuh; // This is shorthand for balanceAmount (Balance Amount)
 
+    // This sets the stage for the JavaFX program to run on
     private static Stage stage;
     @Override
     public void start(Stage primaryStage) throws Exception {
@@ -29,6 +33,7 @@ public class App extends Application{
         primaryStage.show();
     }
 
+    // This is a global function to allow changing of scenes between the pages
     public void changeScene(String fxml) throws IOException {
         Parent pane = FXMLLoader.load(getClass().getResource(fxml));
         stage.getScene().setRoot(pane);

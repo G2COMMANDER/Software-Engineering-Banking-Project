@@ -10,12 +10,14 @@ import java.io.File;
 import java.io.FileInputStream;
 import java.io.IOException;
 
-public class UserListPage {
+public class ViewDelAccountsPage {
 
     App m = new App();
 
     @FXML
     private TableView table;
+    @FXML
+    private Label updateStatus;
 
     private void fillTable(String[][] dataSource) {
         table.getColumns().clear();
@@ -37,17 +39,22 @@ public class UserListPage {
                     });
             table.getColumns().add(column);
         }
+        updateStatus.setText("User List Loaded");
     }
 
     @FXML
-    void loadUserList(ActionEvent event) throws IOException {
+    void exitPage(ActionEvent event) throws IOException {
+        m.changeScene("fxml_pages/employee_pages/EmployeeAccountPage.fxml");
+    }
+
+    @FXML
+    void loadRequests(ActionEvent event) throws IOException {
 
         FileInputStream file = new FileInputStream(new File("src/Database/Database.xlsx"));
-
         ExcelFile workbook = ExcelFile.load(file);
-
-        ExcelWorksheet worksheet = workbook.getWorksheet(1);
-        String[][] sourceData = new String[50][5];
+        ExcelWorksheet worksheet = workbook.getWorksheet(0);
+        
+        String[][] sourceData = new String[50][6];
         for (int row = 0; row < sourceData.length; row++) {
             for (int column = 0; column < sourceData[row].length; column++) {
                 ExcelCell cell = worksheet.getCell(row, column);
@@ -59,8 +66,25 @@ public class UserListPage {
     }
 
     @FXML
-    void returnHome(ActionEvent event) throws IOException {
-        m.changeScene("fxml_pages/employee_pages/EmployeeAccountPage.fxml");
-    }
+    void saveChanges(ActionEvent event) throws IOException {
 
+        /*
+        ExcelFile file = new ExcelFile();
+        ExcelWorksheet worksheet = file.addWorksheet("sheet");
+        for (int row = 0; row < table.getItems().size(); row++) {
+            ObservableList cells = (ObservableList) table.getItems().get(row);
+            for (int column = 0; column < cells.size(); column++) {
+                if (cells.get(column) != null)
+                    worksheet.getCell(row, column).setValue(cells.get(column).toString());
+            }
+        }
+
+        FileOutputStream fileOutput = new FileOutputStream("src/Database/Database.xlsx");
+        file.save("src/Database/Database.xlsx");
+
+        fileOutput.close();
+
+        updateStatus.setText("File Successfully updated");
+        */
+    }
 }
